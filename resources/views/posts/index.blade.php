@@ -6,7 +6,10 @@
     @foreach ($posts as $post)
         <a href="{{ url('posts/'.$post->id) }}">
         {{ $post->title }}</a><br>
-        <a href="">Edit</a>
+
+        <a href="{{ url('posts/'.$post->id.'/edit') }}">Edit</a>
+
+
         <hr>
     @endforeach
 
