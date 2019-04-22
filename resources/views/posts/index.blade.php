@@ -8,8 +8,6 @@
         {{ $post->title }}</a><br>
 
         <a href="{{ url('posts/'.$post->id.'/edit') }}">Edit</a>
-
-
         <hr>
     @endforeach
 

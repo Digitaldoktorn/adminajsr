@@ -15,4 +15,11 @@
         <button type="submit">Update</button>
     </form>
 
+    <form action="{{ url('posts/'.$post->id) }}" method="POST">
+        {{ csrf_field() }}
+        {{ method_field('DELETE') }}
+
+        <button type="submit">Delete</button>
+    </form>
+
 @endsection
