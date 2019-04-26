@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Post;
 
+use App\Http\Requests\ValidatePost;
+
 class PostController extends Controller
 {
     /**
@@ -36,14 +38,14 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidatePost $request)
     {
 //        print_r($request);
         $post = new Post;
         $post->title = $request->title;
         $post->content = $request->content;
         $post->save();
-        return redirect('posts');
+        return redirect('posts')->with('status', 'Post has been created! ');
     }
 
     /**
@@ -77,14 +79,14 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ValidatePost $request, $id)
     {
         $post = Post::find($id);
         $post->title = $request->title;
         $post->content = $request->content;
         $post->save();
 
-        return redirect('posts');
+        return redirect('posts')->with('status', 'Post updated! ');
     }
 
     /**
@@ -97,6 +99,6 @@ class PostController extends Controller
     {
         $post = Post::find($id);
         $post->delete();
-        return redirect('posts');
+        return redirect('posts')->with('status', 'Post deleted! ');
     }
 }
