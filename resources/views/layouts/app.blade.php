@@ -88,11 +88,8 @@
 
         <main class="py-4">
             @yield('content')
-            <div class="footer">
-                <hr>
-                <ul>
-                    <li class="nav-link"><a href="{{ url('contact') }}">Support</a></li>
-                </ul>
+            <div class="modal-footer bg-dark text-white">
+                <small>&copy; 2019-<?php echo date("Y") ;?> Adminajsr | Need help? Contact <a class="text-warning" href="{{ url('contact') }}"> Support</a></small>
             </div>
         </main>
     </div>
