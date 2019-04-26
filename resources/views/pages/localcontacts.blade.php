@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Local contacts</h1>
+    <h1>{{ $title }}</h1>
     <table class="table table-striped">
         <thead>
         <tr>

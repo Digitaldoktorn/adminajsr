@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function index(){
-        return view('pages.index');
-    }
+
     public function board() {
-        return view('pages.board');
+        $title = 'Board';
+        return view('pages.board', compact('title'));
     }
 
     public function localcontacts() {
-        return view('pages.localcontacts');
+        $title = 'Local contacts';
+        return view('pages.localcontacts', compact('title'));
     }
 }

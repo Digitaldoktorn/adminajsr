@@ -22,7 +22,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{{ url('/') }}">Human Rights Focus</a>
+    <a class="navbar-brand" href="{{ url('posts') }}">Human Rights Focus</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,13 +33,14 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('localcontacts') }}">Local Contacts</a>
-            </li>            <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="#">Communication</a>
             </li>
-            </li>            <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="#">Domains</a>
             </li>
-            </li>            <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="#">Admin</a>
             </li>
 
@@ -87,6 +88,12 @@
 
         <main class="py-4">
             @yield('content')
+            <div class="footer">
+                <hr>
+                <ul>
+                    <li class="nav-link"><a href="{{ url('contact') }}">Support</a></li>
+                </ul>
+            </div>
         </main>
     </div>
 

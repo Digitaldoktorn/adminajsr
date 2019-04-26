@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <h1>Blog
+    <h1>Updates
         @if(Auth::user())
             <a class="btn btn-primary btn-sm" title="Create New Post" href="{{ url('posts/create') }}">+</a>
         @endif

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Board</h1>
+<h1>{{ $title }}</h1>
 
 <table class="table table-striped">
     <thead>
