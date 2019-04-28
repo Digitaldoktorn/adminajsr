@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/', 'PostController@index');
-Route::get('/boardmembers', 'BoardmemberController@index');
+Route::get('/board', 'BoardmemberController@index');
 
 //Route::get('/board', 'PageController@board');
 
