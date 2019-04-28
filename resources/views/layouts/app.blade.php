@@ -87,7 +87,24 @@
 
 
         <main class="py-4">
-            @yield('content')
+            <div class="row">
+                <div class="col-md-8">
+                    @yield('content')
+                </div>
+                <div class="col-md-4">
+                    @section('sidebar')
+                        <div class="container">
+                            <h3>Material</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
+                            <br>
+                            <h3>Activities</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
+                            <h3>Local News</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
+                        </div>
+                    @show
+                </div>
+            </div>
             <div class="modal-footer bg-dark text-white">
                 <small>&copy; 2019-<?php echo date("Y") ;?> Adminajsr | Need help? Contact <a class="text-warning" href="{{ url('contact') }}"> Support</a></small>
             </div>
