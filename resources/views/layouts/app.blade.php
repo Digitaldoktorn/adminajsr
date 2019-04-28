@@ -29,7 +29,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{{ url('board') }}">Board</a>
+                <a class="nav-link" href="{{ url('boardmembers') }}">Boardmembers</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('localcontacts') }}">Local Contacts</a>
