@@ -17,7 +17,7 @@ class BoardmemberController extends Controller
     {
         $boardmembers = Boardmember::all();
 
-        return view('boardmembers/index', compact('boardmembers'));
+        return view('boardmembers.index', compact('boardmembers'));
     }
 
     /**
