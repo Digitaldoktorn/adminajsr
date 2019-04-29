@@ -8,7 +8,7 @@ Route::get('/board', 'BoardmemberController@index');
 Route::get('/localcontacts', 'PageController@localcontacts');
 
 Route::resource('posts', 'PostController');
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
