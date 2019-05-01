@@ -29,7 +29,7 @@
 
                 <div class="form-group">
                     <label for="content">Content</label>
-                    <input id="content" value="{{ $post->content }}" class="form-control" type="text" name="content">
+                    <input id="content" value="{{ $post->content }}" class="form-control" type="textarea" name="content">
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
