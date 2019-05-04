@@ -101,6 +101,9 @@
                         <div class="container">
                             <h3>Material</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
+                            <div class="form-group">
+                                {{Form::file('flyer')}}
+                            </div>
                             <br>
                             <h3>Activities</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
