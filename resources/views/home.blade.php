@@ -21,6 +21,8 @@
 <hr>
             <h3>Updates</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis error fugiat laudantium maiores provident quod sint voluptatum. Aspernatur distinctio earum eveniet laboriosam molestiae nesciunt, nulla perspiciatis rerum sapiente voluptates.</p>
+
+
             <table class="table table-striped">
 
                 <tr>
@@ -35,6 +37,7 @@
                 </tr>
 
             </table>
+
 
     {{--</div>--}}
 {{--</div>--}}

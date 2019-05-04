@@ -101,9 +101,18 @@
                         <div class="container">
                             <h3>Material</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
+
+                            {{--Only admin access--}}
+                            @if(Auth::user()->role_id == 1)
                             <div class="form-group">
-                                {{Form::file('flyer')}}
+                                <form action="upload.php" method="post" enctype="multipart/form-data">
+                                    Select file to upload:
+                                    <input type="file" name="fileToUpload" id="fileToUpload">
+                                    <input type="submit" value="Upload file" name="submit">
+                                </form>
                             </div>
+                            @endif
+
                             <br>
                             <h3>Activities</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
