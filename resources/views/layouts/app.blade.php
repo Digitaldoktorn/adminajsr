@@ -22,7 +22,8 @@
 </head>
 <body>
 @if(!Auth::guest())
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary text-white p-4">
+{{--<nav class="navbar navbar-expand-lg navbar-light p-4" style="background-color: #e3f2fd;">--}}
     <a class="navbar-brand" href="{{ url('home') }}">Human Rights Focus</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -87,10 +88,7 @@
     </div>
 </nav>
 
-    <div id="app" class="container-fluid">
-
-
-
+    <div id="app" class="container p-2">
         <main class="py-4">
             <div class="row">
                 <div class="col-md-8">
@@ -118,15 +116,19 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
                             <h3>Local News</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
+                            <br>
+                            <br>
                         </div>
                     @show
                 </div>
             </div>
-            <div class="modal-footer bg-dark text-white">
-                <small>&copy; 2019-<?php echo date("Y") ;?> Adminajsr | Need help? Contact <a class="text-warning" href="{{ url('contact') }}"> Support</a></small>
-            </div>
         </main>
     </div>
+        <footer class="footer bg-dark text-white fixed-bottom mt-3">
+            <div class="container p-4">
+                <small>&copy; 2019-<?php echo date("Y") ;?> Adminajsr | Need help? Contact <a class="text-warning" href="{{ url('contact') }}"> Support</a></small>
+            </div>
+        </footer>
 @endif
 </body>
 </html>
