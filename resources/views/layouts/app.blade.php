@@ -115,8 +115,6 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
                             <h3>Local News</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
-                            <br>
-                            <br>
                         </div>
                     @show
                 </div>
