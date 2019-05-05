@@ -20,7 +20,7 @@
                     <div class="card mt-3">
                         <div class="card-body">
                             <h5 class="card-title"><a href="{{ url('posts/'.$post->id) }}">{{ $post->title }}</a></h5>
-                            <small class="text-black-50">Published {{ $post->created_at }}</small><br><br>
+                            <small class="text-black-50">Published {{ $post->created_at }} by {{ $post->user->name }}</small><br><br>
                             <p class="card-text">{{ $post->content }}</p>
                             @if(Auth::user())
                                 <a href="{{ url('posts/'.$post->id.'/edit') }}" class="btn btn-primary">Edit</a>
@@ -29,7 +29,7 @@
                     </div>
                 @endforeach
                     <br>
-                {{ $posts->links() }}
+                {{--{{ $posts->links() }}--}}
             @else
                 <p>No posts found</p>
             @endif

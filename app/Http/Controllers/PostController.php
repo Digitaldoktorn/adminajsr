@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Post;
+use App\User;
 
 use App\Http\Requests\ValidatePost;
 
@@ -20,8 +21,18 @@ class PostController extends Controller
         // Limits to 5 posts
         $posts = Post::orderBy('created_at', 'desc')->paginate(5);
 
-        return view('posts.index', compact('posts'));
+        // get the inlogged users id
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        
+        // here we are using the relationship efter "with"
+        return view('posts.index')->with('posts', $user->posts);
+        //        return view('home')->with('posts', $user->posts);
+        //        return view('posts.index', compact('posts'));
     }
+
+
+
 
     /**
      * Show the form for creating a new resource.
