@@ -14,24 +14,25 @@
     @endif
 
     <div class="row">
-        @foreach ($posts as $post)
-            <div class="col-12 mb-2">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="{{ url('posts/'.$post->id) }}">{{ $post->title }}</a></h5>
-                        <p class="card-text">{{ $post->content }}</p>
-                        @if(Auth::user())
-                            <a href="{{ url('posts/'.$post->id.'/edit') }}" class="btn btn-primary">Edit</a>
-                        @endif
+        <div class="col-12 mb-2">
+            @if(count($posts) > 0)
+                @foreach ($posts as $post)
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="{{ url('posts/'.$post->id) }}">{{ $post->title }}</a></h5>
+                            <small class="text-black-50">Published {{ $post->created_at }}</small><br><br>
+                            <p class="card-text">{{ $post->content }}</p>
+                            @if(Auth::user())
+                                <a href="{{ url('posts/'.$post->id.'/edit') }}" class="btn btn-primary">Edit</a>
+                            @endif
+                        </div>
                     </div>
-                </div>
-
-            </div>
-
-
-        @endforeach
-
+                @endforeach
+                    <br>
+                {{ $posts->links() }}
+            @else
+                <p>No posts found</p>
+            @endif
+        </div>
     </div>
-
-
 @endsection

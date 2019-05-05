@@ -28,7 +28,7 @@
         <div class="row justify-content-center">
             <div class="col-md-5">
                 <div class="card">
-                    <div class="card-header">{{ __('Human Rights Focus | Registered members access only') }}</div>
+                    <div class="card-header text-center">{{ __('Human Rights Focus | Registered members access only') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
@@ -80,11 +80,11 @@
                 </div>
             </div>
         </div>
-        <main class="py-4">
-            <div class="modal-footer bg-dark text-white">
+        <footer class="footer bg-dark text-white fixed-bottom mt-3">
+            <div class="container p-4">
                 <small>&copy; 2019-<?php echo date("Y") ;?> Adminajsr | Need help? Contact <a class="text-warning" href="{{ url('contact') }}"> Support</a></small>
             </div>
-        </main>
+        </footer>
     </div>
 </body>
 </html>

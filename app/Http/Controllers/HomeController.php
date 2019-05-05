@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//use App\Post;
 
 class HomeController extends Controller
 {
@@ -25,4 +26,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+//      testar att få in posts på home-sidan-funkar ej
+//    public function index()
+//    {
+//        $posts = Post::orderBy('created_at', 'desc')->get();
+//
+//        return view('posts/index', compact('posts'));
+//    }
 }

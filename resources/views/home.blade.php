@@ -34,9 +34,32 @@
                 </tr>
                 <tr>
                     <td><a href="">{{'Title 4'}}</a></td>
+                </tr>                <tr>
+                    <td><a href="">{{'Title 5'}}</a></td>
                 </tr>
 
             </table>
+
+        {{--testar att få in posts home-sidan - funkar ej--}}
+        {{--<div class="row">--}}
+            {{--@foreach ($posts as $post)--}}
+                {{--<div class="col-12 mb-2">--}}
+                    {{--<div class="card">--}}
+                        {{--<div class="card-body">--}}
+                            {{--<h5 class="card-title"><a href="{{ url('posts/'.$post->id) }}">{{ $post->title }}</a></h5>--}}
+                            {{--<p class="card-text">{{ $post->content }}</p>--}}
+                            {{--@if(Auth::user())--}}
+                                {{--<a href="{{ url('posts/'.$post->id.'/edit') }}" class="btn btn-primary">Edit</a>--}}
+                            {{--@endif--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+        {{----}}
+                {{--</div>--}}
+        {{----}}
+        {{----}}
+            {{--@endforeach--}}
+        {{----}}
+        {{--</div>--}}
 
 
     {{--</div>--}}

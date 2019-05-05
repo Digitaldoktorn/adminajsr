@@ -87,9 +87,8 @@
         @endguest
     </div>
 </nav>
-
-    <div id="app" class="container p-2">
-        <main class="py-4">
+    <div id="app" class="container p-2 mb-4">
+        <main class="py-4 mb-4">
             <div class="row">
                 <div class="col-md-8">
                     @yield('content')
@@ -124,7 +123,7 @@
             </div>
         </main>
     </div>
-        <footer class="footer bg-dark text-white fixed-bottom mt-3">
+        <footer class="footer mt-4 bg-dark text-white fixed-bottom">
             <div class="container p-4">
                 <small>&copy; 2019-<?php echo date("Y") ;?> Adminajsr | Need help? Contact <a class="text-warning" href="{{ url('contact') }}"> Support</a></small>
             </div>
