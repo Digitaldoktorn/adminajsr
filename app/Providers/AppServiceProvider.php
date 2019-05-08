@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 //use Illuminate\Support\Facades\Schema;
+use View;
+use Auth;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +26,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        Schema::defaultStringLength(191);
+
+        // if you put '*' instead of 'home' you target all views
+        View::composer('home', function($view){
+            $view->with('auth', Auth::user());
+        });
     }
 }
