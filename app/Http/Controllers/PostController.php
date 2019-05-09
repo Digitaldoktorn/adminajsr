@@ -19,7 +19,8 @@ class PostController extends Controller
     public function index()
     {
         // Limits to 5 posts
-        $posts = Post::orderBy('created_at', 'desc')->paginate(5);
+        // $posts = Post::orderBy('created_at', 'desc')->paginate(5);
+        $posts = Post::latest()->paginate(5);
 
         // get the inlogged users id
         $user_id = auth()->user()->id;

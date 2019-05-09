@@ -25,15 +25,13 @@ class HomeController extends Controller
     //  testar att få in posts på home-sidan-funkar ej
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->take(10)->get();
-        return view('home');
+        $posts = Post::orderBy('created_at', 'desc')->take(6)->get();
+
+        // get the inlogged users id
+//        $user_id = auth()->user()->id;
+//        $user = User::find($user_id);
+
+        return view('home')->with('posts', $posts);
     }
 
-
-//    public function index()
-//    {
-//        $posts = Post::orderBy('created_at', 'desc')->get();
-//
-//        return view('posts/index', compact('posts'));
-//    }
 }
