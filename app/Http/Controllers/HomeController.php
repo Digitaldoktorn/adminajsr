@@ -22,7 +22,6 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    //  testar att få in posts på home-sidan-funkar ej
     public function index()
     {
         $posts = Post::orderBy('created_at', 'desc')->take(6)->get();
