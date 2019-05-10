@@ -17,6 +17,7 @@ class Category extends Model
     // to get categories by name in the url instead of id number
     public function getRouteKeyName()
     {
+        // get the category where the name column is equal to user input
         return 'name';
     }
 

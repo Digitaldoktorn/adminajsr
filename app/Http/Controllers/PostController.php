@@ -24,7 +24,6 @@ class PostController extends Controller
         $posts = Post::latest()->paginate(5);
 
 
-
         // get the inlogged users id
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
