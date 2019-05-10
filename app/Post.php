@@ -7,12 +7,18 @@ use Carbon\Carbon;
 
 class Post extends Model
 {
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo('App\User');
     }
 
-    public function timestampStringAsDateString($timestampString){
-        $date = new Carbon($timestampString);
-        return $date->format('Y-m-d');
+    // Any post may have many categories
+    // Any category may be applied to many posts
+    // A many to many relationship
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
     }
+
+
 }

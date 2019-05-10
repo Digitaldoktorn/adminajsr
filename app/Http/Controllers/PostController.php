@@ -18,9 +18,12 @@ class PostController extends Controller
      */
     public function index()
     {
+
         // Limits to 5 posts
         // $posts = Post::orderBy('created_at', 'desc')->paginate(5);
         $posts = Post::latest()->paginate(5);
+
+
 
         // get the inlogged users id
         $user_id = auth()->user()->id;
@@ -53,7 +56,7 @@ class PostController extends Controller
      */
     public function store(ValidatePost $request)
     {
-//        print_r($request);
+        // print_r($request);
         $post = new Post;
         $post->title = $request->title;
         $post->content = $request->content;

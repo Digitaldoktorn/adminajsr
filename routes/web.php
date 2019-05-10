@@ -1,19 +1,16 @@
 <?php
 
-Route::get('/', 'PostController@index');
-Route::get('/board', 'BoardmemberController@index');
 
-Route::get('/localcontacts', 'PageController@localcontacts');
 
-Route::resource('posts', 'PostController');
 Auth::routes(['register' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-// makes the login page the start page
+// makes the login page the start page, and makes routes accessable from only logged in users
 Route::group(['middleware' => ['web', 'auth']], function() {
-
-    Route::get('/', function () {
-        return view('home');
-    });
+    Route::resource('posts', 'PostController');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/board', 'BoardmemberController@index');
+    Route::get('/localcontacts', 'PageController@localcontacts');
+    Route::get('/', 'HomeController@index')->name('home');
 });
+
+Route::get('/posts/categories/{category}', 'CategoryController@index');
