@@ -44,7 +44,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts/create');
+        return view('posts.create');
     }
 
     /**
@@ -86,7 +86,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        return view('posts/edit', compact('post'));
+        return view('posts.edit', compact('post'));
     }
 
     /**

@@ -18,7 +18,7 @@
 
 
     <div class="row">
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-6">
             <form class="form" action="{{ url('posts') }}" method="POST">
                 {{ csrf_field() }}
                 <div class="form-group">
@@ -30,6 +30,18 @@
                     <label for="content">Content</label>
                     <input id="content" class="form-control" type="textarea" name="content">
                 </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                    </div>
+                    <select class="custom-select" id="category">
+                        <option selected>Choose Category</option>
+                        <option name="materials" value="1">Materials</option>
+                        <option name="portal_updates" value="2">Portal Updates</option>
+                        <option name="local_news" value="3">Local News</option>
+                        <option name="local_news" value="4">Activities</option>
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>
 
@@ -37,3 +49,4 @@
     </div>
 
 @endsection
+

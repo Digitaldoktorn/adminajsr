@@ -41,13 +41,13 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">Communication</a>
+                <a class="nav-link" href="{{ url('communication') }}">Communication</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Domains</a>
+                <a class="nav-link" href="{{ url('domains') }}">Domains</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Admin</a>
+                <a class="nav-link" href="{{ url('admin') }}">Admin</a>
             </li>
 
         </ul>

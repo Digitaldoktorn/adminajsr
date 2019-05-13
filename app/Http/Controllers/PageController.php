@@ -16,4 +16,19 @@ class PageController extends Controller
         $title = 'Local contacts';
         return view('pages.localcontacts', compact('title'));
     }
+
+    public function admin() {
+        $title = 'Admin';
+        return view('pages.admin', compact('title'));
+    }
+
+    public function domains() {
+        $title = 'Domains';
+        return view('pages.domains', compact('title'));
+    }
+
+    public function communication() {
+        $title = 'Communication';
+        return view('pages.communication', compact('title'));
+    }
 }
