@@ -6,17 +6,17 @@ use Illuminate\Http\Request;
 
 use App\User;
 
-class UserController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function indexUser()
     {
         $users = User::all();
-        return view('users.index', compact('users'));
+        return view('admin/indexUser', compact('users'));
     }
 
     /**
@@ -24,9 +24,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createUser()
     {
-        return view('users/create');
+
+        return view('admin.createUser');
     }
 
     /**
@@ -64,9 +65,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editUser($id)
     {
-        //
+        $user = User::find($id);
+        return view('admin.editUser', compact('user'));
     }
 
     /**
