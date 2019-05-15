@@ -10,7 +10,7 @@ Route::group(['middleware' => ['web', 'auth']], function() {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/board', 'BoardmemberController@index');
     Route::get('/localcontacts', 'PageController@localcontacts');
-    Route::get('/admin', 'AdminController@indexUser');
+    Route::get('/admin', 'AdminController@indexAdmin');
     Route::get('/admin/create-user', 'AdminController@createUser');
     Route::get('/admin/{id}/edit-user', 'AdminController@editUser');
     Route::get('/domains', 'PageController@domains');

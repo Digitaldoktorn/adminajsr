@@ -13,10 +13,10 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexUser()
+    public function indexAdmin()
     {
         $users = User::all();
-        return view('admin/indexUser', compact('users'));
+        return view('admin/indexAdmin', compact('users'));
     }
 
     /**
