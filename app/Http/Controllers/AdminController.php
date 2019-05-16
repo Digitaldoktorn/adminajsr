@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\User;
 
+use App\Http\Requests\ValidateUser;
+
 class AdminController extends Controller
 {
     /**
@@ -36,16 +38,18 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeUser(ValidateUser $request)
     {
-        // print_r($request);
+        print_r($request);
         $user = new User;
         $user->name = $request->name;
         $user->role_id = $request->role_id;
+        $user->email = $request->email;
+        $user->password = $request->password;
         // put the currently logged in user into "$post->user_id"
 //        $post->user_id = auth()->user()->id;
         $user->save();
-        return redirect('users')->with('status', 'User has been created! ');
+        return redirect('admin.indexAdmin')->with('status', 'User has been created! ');
     }
 
     /**
@@ -78,9 +82,17 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateUser(ValidateUser $request, $id)
     {
-        //
+        dd($request);
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->role_id = $request->role_id;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();
+
+        return redirect('admin.indexAdmin')->with('status', 'User updated! ');
     }
 
     /**

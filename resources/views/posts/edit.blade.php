@@ -31,17 +31,30 @@
                     <label for="content">Content</label>
                     <input id="content" value="{{ $post->content }}" class="form-control" type="textarea" name="content">
                 </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                    </div>
+                    <select class="custom-select" id="category">
+                        <option selected>Choose Category</option>
+                        <option name="materials" value="1">Materials</option>
+                        <option name="portal_updates" value="2">Portal Updates</option>
+                        <option name="local_news" value="3">Local News</option>
+                        <option name="local_news" value="4">Activities</option>
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+            <br>
+            <form action="{{ url('posts/'.$post->id) }}" method="POST">
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+
+                <button class="btn btn-danger" type="submit">Delete</button>
             </form>
 
         </div>
     </div>
 
-    <form action="{{ url('posts/'.$post->id) }}" method="POST">
-        {{ csrf_field() }}
-        {{ method_field('DELETE') }}
-
-        <button class="btn btn-danger" type="submit">Delete</button>
-    </form>
 
 @endsection
