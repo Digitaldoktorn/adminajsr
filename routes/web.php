@@ -17,7 +17,7 @@ Route::group(['middleware' => ['web', 'auth']], function() {
     Route::get('/admin', 'AdminController@indexAdmin');
     Route::get('/admin/create-user', 'AdminController@createUser');
     Route::get('/admin/{id}/edit-user', 'AdminController@editUser');
-    Route::post('/admin/create-user', 'AdminController@storeUser');
+    Route::post('/admin/create-user', 'AdminController@storeUser')->name('storeUser');
 
 
     Route::get('/domains', 'PageController@domains');

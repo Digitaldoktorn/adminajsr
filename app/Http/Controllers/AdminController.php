@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\User;
 
 use App\Http\Requests\ValidateUser;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -40,16 +41,16 @@ class AdminController extends Controller
      */
     public function storeUser(ValidateUser $request)
     {
-        print_r($request);
+//        print_r($request);
         $user = new User;
         $user->name = $request->name;
         $user->role_id = $request->role_id;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
         // put the currently logged in user into "$post->user_id"
 //        $post->user_id = auth()->user()->id;
         $user->save();
-        return redirect('admin.indexAdmin')->with('status', 'User has been created! ');
+        return redirect('/admin')->with('status', 'User has been created! ');
     }
 
     /**
