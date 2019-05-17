@@ -19,7 +19,7 @@
 
     <div class="row">
         <div class="col-12 col-md-4">
-            <form class="form" action="{{ url('users/'.$user->id) }}" method="POST">
+            <form class="form" action="{{ url('admin/'.$user->id.'/update-user') }}" method="POST">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
                 <div class="form-group">
@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <form action="{{ url('users/'.$user->id) }}" method="POST">
+    <form action="{{ url('admin/'.$user->id) }}" method="POST">
         {{ csrf_field() }}
         {{ method_field('DELETE') }}
 

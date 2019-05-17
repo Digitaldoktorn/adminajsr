@@ -41,7 +41,6 @@ class AdminController extends Controller
      */
     public function storeUser(ValidateUser $request)
     {
-//        print_r($request);
         $user = new User;
         $user->name = $request->name;
         $user->role_id = $request->role_id;
@@ -85,7 +84,7 @@ class AdminController extends Controller
      */
     public function updateUser(ValidateUser $request, $id)
     {
-        dd($request);
+//        dd($request);
         $user = User::find($id);
         $user->name = $request->name;
         $user->role_id = $request->role_id;
@@ -93,7 +92,7 @@ class AdminController extends Controller
         $user->password = $request->password;
         $user->save();
 
-        return redirect('admin.indexAdmin')->with('status', 'User updated! ');
+        return redirect('/admin')->with('status', 'User updated! ');
     }
 
     /**
@@ -102,8 +101,13 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroyUser($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect('/admin');
+
+
     }
 }

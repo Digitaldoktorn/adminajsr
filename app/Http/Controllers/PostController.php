@@ -57,7 +57,7 @@ class PostController extends Controller
         $post = new Post;
         $post->title = $request->title;
         $post->content = $request->content;
-        $post->category_id = $request->category_id;
+//        $post->category_id = $request->category_id;
         // put the currently logged in user into "$post->user_id"
         $post->user_id = auth()->user()->id;
         $post->save();
@@ -102,7 +102,7 @@ class PostController extends Controller
         $post->content = $request->content;
         $post->save();
 
-        return redirect('posts')->with('status', 'Post updated! ');
+        return redirect('/posts')->with('status', 'Post updated! ');
     }
 
     /**
