@@ -106,7 +106,7 @@ class AdminController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect('/admin');
+        return redirect('/admin')->with('status', 'User deleted! ');
 
 
     }

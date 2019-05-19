@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <form action="{{ url('admin/'.$user->id) }}" method="POST">
+    <form action="{{ url('admin/'.$user->id.'/delete-user') }}" method="POST">
         {{ csrf_field() }}
         {{ method_field('DELETE') }}
 
