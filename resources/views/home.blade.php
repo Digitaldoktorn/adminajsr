@@ -10,8 +10,12 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis error fugiat laudantium maiores provident quod sint voluptatum. Aspernatur distinctio earum eveniet laboriosam molestiae nesciunt, nulla perspiciatis rerum sapiente voluptates.</p>
 
 
+    <h5>Sort by categories
 
-
+        @foreach ($categories as $category)
+                | {{ $category }}
+        @endforeach
+    </h5>
     <div class="row">
         @foreach ($posts as $post)
             <div class="col-6 mb-1">

@@ -90,7 +90,17 @@
                     </div>
                     <div class="col-md-4">
                         @section('sidebar')
+
                             <div class="container">
+                                <h3>Categories</h3>
+
+                                {{--<ol class="list-unstyled">--}}
+                                    {{--@foreach ($categories as $category)--}}
+                                        {{--<li>--}}
+                                            {{--{{ $category }}--}}
+                                        {{--</li>--}}
+                                    {{--@endforeach--}}
+                                {{--</ol>--}}
 
                                 <h3>Material</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>

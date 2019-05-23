@@ -16,7 +16,7 @@ Route::group(['middleware' => ['web', 'auth']], function() {
 
     Route::get('/localcontacts', 'PageController@localcontacts')->name('localcontacts');
 
-    Route::get('/admin', 'AdminController@indexAdmin');
+    Route::get('/admin', 'AdminController@indexAdmin')->name('admin');
     Route::get('/admin/create-user', 'AdminController@createUser')->name('createUser');
     Route::get('/admin/{id}/edit-user', 'AdminController@editUser')->name('editUser');
     Route::post('/admin/create-user', 'AdminController@storeUser')->name('storeUser');
@@ -25,6 +25,6 @@ Route::group(['middleware' => ['web', 'auth']], function() {
 
     Route::get('/', 'HomeController@index')->name('home');
 //    Route::get('/posts', 'PostController@indexCategories');
+    Route::get('/posts/categories/{category}', 'CategoryController@index');
 });
 
-Route::get('/posts/categories/{category}', 'CategoryController@index');

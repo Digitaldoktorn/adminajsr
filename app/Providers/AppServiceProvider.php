@@ -27,9 +27,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        // if you put '*' instead of 'home' you target all views
+        // View facade. If you put '*' instead of 'home' you target all views
         View::composer('home', function($view){
             $view->with('auth', Auth::user());
+        });
+
+//        view helper function
+        view()->composer('home', function($view) {
+            $view->with('categories', \App\Category::pluck('name'));
         });
     }
 }
