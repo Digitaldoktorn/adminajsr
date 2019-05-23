@@ -39,13 +39,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('board') }}">Board</a>
             </li>
-
-            {{--<li class="nav-item">--}}
-                {{--<a class="nav-link" href="{{ url('communication') }}">Communication</a>--}}
-            {{--</li>--}}
-            {{--<li class="nav-item">--}}
-                {{--<a class="nav-link" href="{{ url('domains') }}">Domains</a>--}}
-            {{--</li>--}}
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('admin') }}">Admin</a>
             </li>
@@ -90,34 +83,45 @@
     <div id="app" class="container p-2 mb-4">
         <main class="py-4 mb-4">
             <div class="row">
-                <div class="col-md-8">
-                    @yield('content')
-                </div>
-                <div class="col-md-4">
-                    @section('sidebar')
-                        <div class="container">
-                            <h3>Material</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
 
-                            {{--Only admin access--}}
-                            @if(Auth::user()->role_id == 1)
-                            <div class="form-group">
-                                <form action="upload.php" method="post" enctype="multipart/form-data">
-                                    Select file to upload:
-                                    <input type="file" name="fileToUpload" id="fileToUpload">
-                                    <input type="submit" value="Upload file" name="submit">
-                                </form>
+                @if(request()->route()->getName() == 'home' || request()->route()->getName() == 'posts/index')
+                    <div class="col-md-8">
+                        @yield('content')
+                    </div>
+                    <div class="col-md-4">
+                        @section('sidebar')
+                            <div class="container">
+
+                                <h3>Material</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
+
+
+                                {{--Only admin access--}}
+                                @if(Auth::user()->role_id == 1)
+                                    <div class="form-group">
+                                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                                            Select file to upload:
+                                            <input type="file" name="fileToUpload" id="fileToUpload">
+                                            <input type="submit" value="Upload file" name="submit">
+                                        </form>
+                                    </div>
+                                @endif
+
+                                <br>
+                                <h3>Activities</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
+                                <h3>Local News</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
                             </div>
-                            @endif
+                        @show
+                    </div>
+                @else
+                    <div class="col-md-12">
+                        @yield('content')
+                    </div>
+                @endif
 
-                            <br>
-                            <h3>Activities</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
-                            <h3>Local News</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
-                        </div>
-                    @show
-                </div>
+
             </div>
         </main>
     </div>

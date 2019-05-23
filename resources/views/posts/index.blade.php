@@ -7,6 +7,17 @@
         @endif
     </h1>
 
+    {{--<ol class="list-unstyled">--}}
+        {{--@foreach ($categories as $category)--}}
+            {{--<li>--}}
+                {{--<a href="/posts/categories/{{ $category }}">--}}
+                    {{--{{ $category->name }}--}}
+                {{--</a>--}}
+            {{--</li>--}}
+        {{--@endforeach--}}
+    {{--</ol>--}}
+
+
     @if (session('status'))
         <div class="alert alert-success">
             {{ session('status') }}

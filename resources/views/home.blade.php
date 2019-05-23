@@ -10,6 +10,8 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis error fugiat laudantium maiores provident quod sint voluptatum. Aspernatur distinctio earum eveniet laboriosam molestiae nesciunt, nulla perspiciatis rerum sapiente voluptates.</p>
 
 
+
+
     <div class="row">
         @foreach ($posts as $post)
             <div class="col-6 mb-1">
@@ -24,5 +26,6 @@
     </div>
 
     <div class="text-right"><a href="{{ url('posts') }}">More updates -></a></div>
+
 
 @endsection

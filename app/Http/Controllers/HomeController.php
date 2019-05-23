@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
 use App\Post;
+
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -32,6 +34,10 @@ class HomeController extends Controller
 //        $user = User::find($user_id);
 
         return view('home')->with('posts', $posts);
+
+
+
     }
+
 
 }

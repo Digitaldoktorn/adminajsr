@@ -10,10 +10,6 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-//    public function index(Category $category)
-//    {
-//        return $category;
-//    }
 
     public function index(Category $category)
     {

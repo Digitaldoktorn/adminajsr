@@ -35,6 +35,15 @@ class PostController extends Controller
     }
 
 
+
+//    public function indexCategories()
+//    {
+//        $categories = Category::orderBy('created_at', 'desc')->take(6)->get();
+//
+//        return view('home')->with('categories', $categories);
+//    }
+
+
     /**
      * Show the form for creating a new resource.
      *
