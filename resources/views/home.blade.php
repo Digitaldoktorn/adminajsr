@@ -10,18 +10,12 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis error fugiat laudantium maiores provident quod sint voluptatum. Aspernatur distinctio earum eveniet laboriosam molestiae nesciunt, nulla perspiciatis rerum sapiente voluptates.</p>
 
 
-    <h5>Sort by categories
-
-        @foreach ($categories as $category)
-                | {{ $category }}
-        @endforeach
-    </h5>
     <div class="row">
         @foreach ($posts as $post)
             <div class="col-6 mb-1">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="{{ url('posts/'.$post->id) }}">{{ $post->title }}</a></h5><small class="text-black-50">{{ $post->created_at->toDateString() }} </small>
+                        <h5 class="card-title"><a href="{{ url('posts/'.$post->id) }}">{{ $post->title }}</a></h5><small class="text-black-50">{{ $post->created_at->toDateString() }} in {{ $post->category['name'] }} </small>
 
                     </div>
                 </div>

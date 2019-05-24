@@ -33,7 +33,11 @@ class AppServiceProvider extends ServiceProvider
         });
 
 //        view helper function
-        view()->composer('home', function($view) {
+//        view()->composer('home', function($view) {
+//            $view->with('categories', \App\Category::pluck('name'));
+//        });
+
+        view()->composer('posts.index', function($view) {
             $view->with('categories', \App\Category::pluck('name'));
         });
     }

@@ -2,6 +2,7 @@
 
 @section('content')
     <h1>{{ $title }}</h1>
+
     <table class="table table-striped">
         <thead>
         <tr>

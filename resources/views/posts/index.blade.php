@@ -6,6 +6,18 @@
             <a class="btn btn-primary btn-sm" title="Create New Post" href="{{ url('posts/create') }}">+</a>
         @endif
     </h1>
+    <br>
+    <h5>Sort by categories: </h5>
+    <div class="btn-group" role="group" aria-label="Sort by category">
+
+            <button type="button" class="btn btn-light border border-primary"><a href="{{ url('posts') }}">All</a></button>
+
+            @foreach ($categories as $category)
+                <button type="button" class="btn btn-light border border-primary"><a href="/posts/categories/{{ $category }}"> {{ $category }}</a></button>
+
+            @endforeach
+
+    </div>
 
     {{--<ol class="list-unstyled">--}}
         {{--@foreach ($categories as $category)--}}

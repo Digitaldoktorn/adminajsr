@@ -31,6 +31,8 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
+                <a class="nav-link" href="{{ url('home') }}">Home</a>
+            </li>            <li class="nav-item">
                 <a class="nav-link" href="{{ url('posts') }}">Updates</a>
             </li>
             <li class="nav-item">
@@ -84,7 +86,7 @@
         <main class="py-4 mb-4">
             <div class="row">
 
-                @if(request()->route()->getName() == 'home' || request()->route()->getName() == 'posts/index')
+                @if(request()->route()->getName() == 'home' || request()->route()->getName() == 'posts.index' || request()->route()->getName() == 'posts.show')
                     <div class="col-md-8">
                         @yield('content')
                     </div>
@@ -92,7 +94,6 @@
                         @section('sidebar')
 
                             <div class="container">
-                                <h3>Categories</h3>
 
                                 {{--<ol class="list-unstyled">--}}
                                     {{--@foreach ($categories as $category)--}}
