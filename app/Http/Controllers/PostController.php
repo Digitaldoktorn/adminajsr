@@ -133,8 +133,17 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
+        $user = Auth::user();
+
         $post = Post::find($id);
-        $post->delete();
-        return redirect('/posts')->with('status', 'Post deleted! ');
+        if($user->can('destroy', $post)){
+            $post->delete();
+            return redirect('/posts')->with('status', 'Post deleted! ');
+        } else {
+            echo "Not Authorized.";
+        }
+//        $post = Post::find($id);
+//        $post->delete();
+//        return redirect('/posts')->with('status', 'Post deleted! ');
     }
 }

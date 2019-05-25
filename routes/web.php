@@ -32,7 +32,7 @@ Route::group(['middleware' => ['web', 'auth']], function() {
 //Route::get('service/post/view', 'PostController@index');
 Route::get('service/post/create', 'PostController@create');
 Route::get('service/post/edit', 'PostController@edit');
-Route::get('service/post/delete', 'PostController@delete');
+Route::get('service/post/destroy', 'PostController@destroy');
 
 
 
