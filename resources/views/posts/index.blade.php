@@ -3,7 +3,7 @@
 
     <h1>Updates
         @if(Auth::user())
-            <a class="btn btn-primary btn-sm" title="Create New Post" href="{{ url('posts/create') }}">+</a>
+            <a class="btn btn-primary btn-sm" title="Create New Post" href="{{ url('posts/create') }}">New post</a>
         @endif
     </h1>
     <br>

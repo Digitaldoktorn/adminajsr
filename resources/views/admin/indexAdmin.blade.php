@@ -4,7 +4,7 @@
     <h1>Admin Page</h1><br>
     <h3>Users
         @if(Auth::user())
-            <a class="btn btn-primary btn-sm" title="Add user" href="{{ url('admin/create-user') }}">+</a>
+            <a class="btn btn-primary btn-sm" title="Add user" href="{{ url('admin/create-user') }}">New user</a>
     </h3>
 
     @if (session('status'))
