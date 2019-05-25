@@ -2,7 +2,8 @@
 @section('content')
 
     <h1>Updates
-        @if(Auth::user())
+        {{--@if(Auth::user())--}}
+        @if(Auth::user()->role_id <= 3)
             <a class="btn btn-primary btn-sm" title="Create New Post" href="{{ url('posts/create') }}">New post</a>
         @endif
     </h1>
@@ -47,7 +48,8 @@
                             {{--https://carbon.nesbot.com/docs/#api-getters--}}
                             <small class="text-black-50">Published {{ $post->created_at->toDateString() }} </small><br><br>
                             <p class="card-text">{{ $post->content }}</p>
-                            @if(Auth::user())
+                            {{--@if(Auth::user())--}}
+                            @if(Auth::user()->id == $post->user_id)
                                 <a href="{{ url('posts/'.$post->id.'/edit') }}" class="btn btn-primary">Edit</a>
                             @endif
                         </div>

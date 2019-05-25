@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfa525cc-bd0b-47bd-84bb-ff58ed60680e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/PostPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/PostPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +21,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="906">
+            <state relative-caret-position="950">
               <caret line="139" column="12" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="12" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
@@ -42,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/posts/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="111" selection-start-line="5" selection-start-column="111" selection-end-line="5" selection-end-column="111" />
+              <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -60,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Policies/PostPolicy.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="45" column="42" lean-forward="true" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+            <state relative-caret-position="357">
+              <caret line="43" selection-start-line="43" selection-end-line="46" selection-end-column="5" />
               <folding>
                 <element signature="e#32#45#0#PHP" expanded="true" />
               </folding>
@@ -208,12 +205,12 @@
         <option value="$PROJECT_DIR$/resources/views/admin/createUser.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/posts/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/posts/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/posts/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/indexAdmin.blade.php" />
         <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Policies/PostPolicy.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PostController.php" />
+        <option value="$PROJECT_DIR$/resources/views/posts/index.blade.php" />
       </list>
     </option>
   </component>
@@ -304,7 +301,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="37" />
     <option name="y" value="23" />
-    <option name="width" value="1143" />
+    <option name="width" value="1197" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -513,12 +510,12 @@
       <workItem from="1558533290791" duration="462000" />
       <workItem from="1558604748131" duration="7635000" />
       <workItem from="1558672988539" duration="8618000" />
-      <workItem from="1558766429936" duration="6039000" />
+      <workItem from="1558766429936" duration="7250000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216304000" />
+    <option name="totallyTimeSpent" value="217515000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -530,7 +527,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="37" y="23" width="1143" height="1040" extended-state="0" />
+    <frame x="37" y="23" width="1197" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49610388" weight="0.17559263" />
@@ -818,13 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/posts/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="111" selection-start-line="5" selection-start-column="111" selection-end-line="5" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/indexAdmin.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -861,7 +851,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="906">
+        <state relative-caret-position="950">
           <caret line="139" column="12" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="12" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
@@ -871,11 +861,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Policies/PostPolicy.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="45" column="42" lean-forward="true" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+        <state relative-caret-position="357">
+          <caret line="43" selection-start-line="43" selection-end-line="46" selection-end-column="5" />
           <folding>
             <element signature="e#32#45#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/posts/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
         </state>
       </provider>
     </entry>
