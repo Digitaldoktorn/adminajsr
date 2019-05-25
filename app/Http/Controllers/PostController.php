@@ -96,13 +96,13 @@ class PostController extends Controller
         // load post
         $post = Post::find($id);
 
-        if ($user->can('update', $post)) {
-            echo "Current logged in user is allowed to update the Post: {$post->user_id}";
+
+        if ($user->can('edit', $post)) {
+            return view('posts.edit', compact('post'));
         } else {
             echo 'Not Authorized.';
         }
-
-//
+        
 //        $post = Post::find($id);
 //        return view('posts.edit', compact('post'));
     }
