@@ -3,7 +3,6 @@
 
     <h1>Add User</h1>
 
-    {{--Kopierat från https://gist.github.com/trevorgreenleaf/b1508d5524d43a666757f9e9fd1e3903--}}
     @if (count($errors) > 0)
         <div class="alert alert-danger text-left">
             <strong>Whoops!</strong> There were problems with input:

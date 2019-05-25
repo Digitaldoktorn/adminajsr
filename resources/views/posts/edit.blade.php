@@ -3,7 +3,6 @@
 
     <h1>Edit</h1>
 
-    {{--Kopierat från https://gist.github.com/trevorgreenleaf/b1508d5524d43a666757f9e9fd1e3903--}}
     @if (count($errors) > 0)
         <div class="alert alert-danger text-left">
             <strong>Whoops!</strong> There were problems with input:
@@ -37,10 +36,9 @@
                     </div>
                     <select class="custom-select" id="category">
                         <option selected>Choose Category</option>
-                        <option name="materials" value="1">Materials</option>
-                        <option name="portal_updates" value="2">Portal Updates</option>
-                        <option name="local_news" value="3">Local News</option>
-                        <option name="local_news" value="4">Activities</option>
+                        <option name="Materials" value="1">Materials</option>
+                        <option name="Local News" value="2">Local News</option>
+                        <option name="Activities" value="3">Activities</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>

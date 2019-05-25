@@ -25,8 +25,8 @@ class PostController extends Controller
 
 
         // get the inlogged users id
-        $user_id = auth()->user()->id;
-        $user = User::find($user_id);
+//        $user_id = auth()->user()->id;
+//        $user = User::find($user_id);
 
         // here we are using the relationship efter "with"- detta tror jag innebär att inloggad användare bara kan se sina egna inlägg men så vill jag inte ha det
 //        return view('posts.index')->with('posts', $user->posts);
