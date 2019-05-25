@@ -28,3 +28,11 @@ Route::group(['middleware' => ['web', 'auth']], function() {
     Route::get('/posts/categories/{category}', 'CategoryController@index');
 });
 
+//    policies
+//Route::get('service/post/view', 'PostController@index');
+Route::get('service/post/create', 'PostController@create');
+Route::get('service/post/edit', 'PostController@edit');
+Route::get('service/post/delete', 'PostController@delete');
+
+
+

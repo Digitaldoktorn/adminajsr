@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 use App\Post;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 
 use App\Http\Requests\ValidatePost;
@@ -18,18 +19,8 @@ class PostController extends Controller
      */
     public function index()
     {
-
-        // Limits to 5 posts
-        // $posts = Post::orderBy('created_at', 'desc')->paginate(5);
+        // Limits to 5 posts (order by created at desc)
         $posts = Post::latest()->paginate(5);
-
-
-        // get the inlogged users id
-//        $user_id = auth()->user()->id;
-//        $user = User::find($user_id);
-
-        // here we are using the relationship efter "with"- detta tror jag innebär att inloggad användare bara kan se sina egna inlägg men så vill jag inte ha det
-//        return view('posts.index')->with('posts', $user->posts);
 
         return view('posts.index', compact('posts'));
     }
@@ -48,7 +39,16 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $user = Auth::user();
+
+        if($user->can('create', Post::class)){
+            return view('posts.create');
+        } else {
+            echo 'Not authorized';
+        }
+//        exit;
+
+
     }
 
     /**
@@ -90,9 +90,23 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+        // get current logged in user
+        $user = Auth::user();
+
+        // load post
         $post = Post::find($id);
-        return view('posts.edit', compact('post'));
+
+        if ($user->can('update', $post)) {
+            echo "Current logged in user is allowed to update the Post: {$post->user_id}";
+        } else {
+            echo 'Not Authorized.';
+        }
+
+//
+//        $post = Post::find($id);
+//        return view('posts.edit', compact('post'));
     }
+
 
     /**
      * Update the specified resource in storage.
