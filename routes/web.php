@@ -16,7 +16,9 @@ Route::group(['middleware' => ['web', 'auth']], function() {
 
     Route::get('/localcontacts', 'PageController@localcontacts')->name('localcontacts');
 
-    Route::get('/admin', 'AdminController@indexAdmin')->name('admin');
+    // making admin page accessible fo admin only, see also kernel.php and AdminpageMiddleware.php
+    Route::get('/admin', 'AdminController@indexAdmin')->name('admin')->middleware('adminpage');
+
     Route::get('/admin/create-user', 'AdminController@createUser')->name('createUser');
     Route::get('/admin/{id}/edit-user', 'AdminController@editUser')->name('editUser');
     Route::post('/admin/create-user', 'AdminController@storeUser')->name('storeUser');
