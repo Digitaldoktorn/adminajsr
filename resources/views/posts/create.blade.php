@@ -33,12 +33,18 @@
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Options</label>
                     </div>
+                    {{--<div class="form-group">--}}
+                        {{--<label for="category_id">Category ID</label>--}}
+                        {{--<input id="category_id" class="form-control" type="number" min="1" max="3" name="category_id">--}}
+                    {{--</div>--}}
+
                     <select class="custom-select" id="category">
                         <option selected>Choose Category</option>
-                        <option name="Materials" value="1">Materials</option>
-                        <option name="Local News" value="2">Local News</option>
-                        <option name="Activities" value="3">Activities</option>
+                        <option id="category_id" name="category_id">Materials</option>
+                        <option id="category_id" name="category_id">Local News</option>
+                        <option id="category_id" name="category_id">Activities</option>
                     </select>
+
                 </div>
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>
