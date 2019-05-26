@@ -46,7 +46,7 @@
                             <h5 class="card-title"><a href="{{ url('posts/'.$post->id) }}">{{ $post->title }}</a></h5>
 
                             {{--https://carbon.nesbot.com/docs/#api-getters--}}
-                            <small class="text-black-50">Published {{ $post->created_at->toDateString() }} </small><br><br>
+                            <small class="text-black-50">Published {{ $post->created_at->toDateString() }} by {{ $post->user->name }} </small><br><br>
                             <p class="card-text">{{ $post->content }}</p>
                             {{--@if(Auth::user())--}}
                             @if(Auth::user()->id == $post->user_id)

@@ -40,9 +40,9 @@
 
                     <select class="custom-select" id="category">
                         <option selected>Choose Category</option>
-                        <option id="category_id" name="category_id">Materials</option>
-                        <option id="category_id" name="category_id">Local News</option>
                         <option id="category_id" name="category_id">Activities</option>
+                        <option id="category_id" name="category_id">Local News</option>
+                        <option id="category_id" name="category_id">Materials</option>
                     </select>
 
                 </div>
