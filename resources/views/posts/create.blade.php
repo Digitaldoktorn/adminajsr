@@ -3,6 +3,7 @@
 
     <h1>Create Post</h1>
 
+    {{--placera denna i controllern istället--}}
     @if (count($errors) > 0)
         <div class="alert alert-danger text-left">
             <strong>Whoops!</strong> There were problems with input:
@@ -22,33 +23,26 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input id="title" class="form-control" type="text" name="title">
+                    <input id="title" class="form-control" type="text" name="title" placeholder="Max 255 characters">
                 </div>
 
                 <div class="form-group">
                     <label for="content">Content</label>
-                    <input id="content" class="form-control" type="textarea" name="content">
+                    <textarea id="content" class="form-control" rows="5" name="content" placeholder="Max 255 characters"></textarea>
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Options</label>
                     </div>
-                    {{--<div class="form-group">--}}
-                        {{--<label for="category_id">Category ID</label>--}}
-                        {{--<input id="category_id" class="form-control" type="number" min="1" max="3" name="category_id">--}}
-                    {{--</div>--}}
-
-                    <select class="custom-select" id="category">
+                    <select class="custom-select" id="category" type="text" name="category_id">
                         <option selected>Choose Category</option>
-                        <option id="category_id" name="category_id">Activities</option>
-                        <option id="category_id" name="category_id">Local News</option>
-                        <option id="category_id" name="category_id">Materials</option>
+                        @foreach ($categories as $category)
+                            <option id="category_id" value={{ $category->id }}>{{ $category->name }}</option>
+                        @endforeach
                     </select>
-
                 </div>
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>
-
         </div>
     </div>
 

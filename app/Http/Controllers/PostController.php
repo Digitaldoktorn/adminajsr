@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Category;
 
 use App\Http\Requests\ValidatePost;
 
@@ -39,16 +40,16 @@ class PostController extends Controller
      */
     public function create()
     {
+        $categories = Category::all();
+
         $user = Auth::user();
 
         if($user->can('create', Post::class)){
-            return view('posts.create');
+            return view('posts.create', compact('categories'));
         } else {
             echo 'Not authorized';
         }
 //        exit;
-
-
     }
 
     /**
@@ -59,11 +60,11 @@ class PostController extends Controller
      */
     public function store(ValidatePost $request)
     {
-        // print_r($request);
+//        dd($request);
         $post = new Post;
         $post->title = $request->title;
         $post->content = $request->content;
-//        $post->category_id = $request->category_id;
+        $post->category_id = $request->category_id;
         // put the currently logged in user into "$post->user_id"
         $post->user_id = auth()->user()->id;
         $post->save();
