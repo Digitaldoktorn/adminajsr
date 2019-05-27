@@ -15,7 +15,7 @@
             <div class="col-6 mb-1">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="{{ url('posts/'.$post->id) }}">{{ $post->title }}</a></h5><small class="text-black-50">{{ $post->created_at->toDateString() }} in {{ $post->category['name'] }} </small>
+                        <h5 class="card-title"><a href="{{ url('posts/'.$post->id) }}">{{ $post->title }}</a></h5><small class="text-black-50">{{ $post->created_at->toDateString() }} in {{ $post->categories->first() ? $post->categories->first()->name : '' }} </small>
 
                     </div>
                 </div>

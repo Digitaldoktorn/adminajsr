@@ -7,6 +7,8 @@ use Carbon\Carbon;
 
 class Post extends Model
 {
+    protected $with = ['categories'];
+
 //    protected $fillable = [
 //        'title', 'content', 'created_at', 'updated_at', 'user_id', 'category_id'
 //    ];

@@ -35,11 +35,7 @@ class HomeController extends Controller
 //        $user = User::find($user_id);
 
 //        "->with" makes it possible to show posts on home page
-        return view('home')->with('posts', $posts)->with('categories', $categories);
-
-
+        return view('home', compact('categories', 'posts'));
 
     }
-
-
 }
