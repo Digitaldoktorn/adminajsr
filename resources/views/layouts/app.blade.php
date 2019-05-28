@@ -38,9 +38,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('localcontacts') }}">Local Contacts</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('board') }}">Board</a>
-            </li>
+            {{--<li class="nav-item">--}}
+                {{--<a class="nav-link" href="{{ url('board') }}">Board</a>--}}
+            {{--</li>--}}
             @if (Auth::user()->role_id == 1)
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('admin') }}">Admin</a>
@@ -66,7 +66,7 @@
         @else
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }} ({{ Auth::user()->role_id }})<span class="caret"></span><br>
+                    {{ Auth::user()->name }} <span class="caret"></span>
 
                 </a>
 
@@ -98,33 +98,15 @@
 
                             <div class="container">
 
-                                {{--<ol class="list-unstyled">--}}
-                                    {{--@foreach ($categories as $category)--}}
-                                        {{--<li>--}}
-                                            {{--{{ $category }}--}}
-                                        {{--</li>--}}
-                                    {{--@endforeach--}}
-                                {{--</ol>--}}
-
-
                                 <h3>Activities</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
+                                <p>In this category you can read about national and global activities organized by our organization, such as media events, seminars, other events, rallies and meetings.</p>
                                 <h3>Local News</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
+                                <p>Local news from our local contact person are presented in this category. For example location address changes, time changes, local events etc.</p>
                                 <h3>Material</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque distinctio eum molestias nemo pariatur quae quam. Blanditiis et facilis in nihil quisquam soluta vitae. Accusamus alias assumenda natus neque veritatis.</p>
+                                <p>Flyers, videos, petitions, external resources etc. are presented in this category. Check regularly for updates!</p>
 
 
-                                {{--Only admin access--}}
-                                @if(Auth::user()->role_id == 1)
-                                    <div class="form-group">
-                                        <form action="upload.php" method="post" enctype="multipart/form-data">
-                                            Select file to upload:
-                                            <input type="file" name="fileToUpload" id="fileToUpload">
-                                            <input type="submit" value="Upload file" name="submit">
-                                        </form>
-                                    </div>
-                                @endif
+
 
                                 <br>
                             </div>

@@ -4,10 +4,11 @@
 
     {{--Greeting logged in user, see code in AppServiceProvider--}}
     <h1>Welcome {{ $auth->name }}!</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque eligendi expedita illum numquam provident sapiente sint ullam. Ex illum laudantium mollitia optio perspiciatis! A accusamus dolore, laudantium minima nam quia.</p>
+    <p>This is a web portal with internal information for our organisation's members. If you need any help, please send an email to support. Welcome to explore the site!</p>
     <hr>
     <h3>Updates</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis error fugiat laudantium maiores provident quod sint voluptatum. Aspernatur distinctio earum eveniet laboriosam molestiae nesciunt, nulla perspiciatis rerum sapiente voluptates.</p>
+    <p>An overview of the latest updates in the categories "Activities", "Local news" and "Materials" are presented here. Check out for more on the Updates page.</p>
+    <br>
 
 
     <div class="row">

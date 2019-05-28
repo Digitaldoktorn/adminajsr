@@ -41,6 +41,19 @@
                         @endforeach
                     </select>
                 </div>
+                <br>
+                {{--Only admin access--}}
+                @if(Auth::user()->role_id == 1)
+                <div class="form-group">
+                    <form action="upload.php" method="post" enctype="multipart/form-data">
+                        Select file to upload (for "Materials" category only):<br><br>
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="submit" value="Upload file" name="submit">
+                    </form>
+                </div>
+                @endif
+                <br>
+
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>
         </div>
