@@ -29,7 +29,7 @@
 
                 <div class="form-group">
                     <label for="role_id">Role ID</label>
-                    <input id="role_id" value="{{ $user->role_id }}" class="form-control" type="number" name="role_id">
+                    <input id="role_id" value="{{ $user->roles->first()->id }}" class="form-control" type="number" name="role_id">
                 </div>
 
                 <div class="form-group">

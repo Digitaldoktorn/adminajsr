@@ -4,13 +4,13 @@
 
 Auth::routes(['register' => false]);
 
-// makes the login page the start page, and makes routes accessable from only logged in users
+// makes the login page the start page, and makes routes accessible for only logged in users
 Route::group(['middleware' => ['web', 'auth']], function() {
 
 //    name kräver 2 parametrar här, jag chansar på index
     Route::resource('/posts', 'PostController')->name('posts', 'index');
 
-//    Route::resource('users', 'AdminController'); så här kan jag göra om jag skapar en UserController och döper om alla funktioner, dvs store istället för storeUser osv. Jag kan sno kod från AdminController sedan (vilken jag ej kommer att behöva)
+//    Route::resource('users', 'AdminController'); så här kan jag göra om jag skapar en UserController och döper om alla funktioner, dvs store istället för storeUser osv. Jag kan kopiera kod från AdminController sedan (vilken jag ej kommer att behöva)
 
     Route::get('/home', 'HomeController@index')->name('home');
 
