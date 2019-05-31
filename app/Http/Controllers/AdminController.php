@@ -30,6 +30,7 @@ class AdminController extends Controller
      */
     public function createUser()
     {
+        $roles = Role::all();
 
         return view('admin.createUser');
     }
@@ -52,9 +53,6 @@ class AdminController extends Controller
         $array = [];
         $array[] = $role;
 
-
-        // put the currently logged in user into "$post->user_id"
-//        $post->user_id = auth()->user()->id;
         $user->save();
         $user->roles()->attach($role);
         return redirect('/admin')->with('status', 'User has been created! ');
@@ -90,18 +88,46 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+
+
+//    public function updateUser(ValidateUser $request, $id)
+//    {
+////        dd($request);
+//        $user = User::find($id);
+//        $user->name = $request->name;
+//        $user->role_id = $request->role_id;
+//        $user->email = $request->email;
+//        $user->password = $request->password;
+//        $user->save();
+//
+//        return redirect('/admin')->with('status', 'User updated! ');
+//    }
+
     public function updateUser(ValidateUser $request, $id)
     {
-//        dd($request);
         $user = User::find($id);
         $user->name = $request->name;
-        $user->role_id = $request->role_id;
         $user->email = $request->email;
         $user->password = $request->password;
+
+        // Updating roles
+        if(isset($user->roles->first()->id))
+        {
+            $user->roles()->detach($user->roles->first()->id);
+        }
+        $user->roles()->attach($request->role_id);
         $user->save();
 
         return redirect('/admin')->with('status', 'User updated! ');
     }
+
+
+
+
+
+
 
     /**
      * Remove the specified resource from storage.

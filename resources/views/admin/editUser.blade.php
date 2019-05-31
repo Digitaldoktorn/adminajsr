@@ -28,11 +28,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="role_id">Role ID</label>
-                    <input id="role_id" value="{{ $user->roles->first()->id }}" class="form-control" type="number" name="role_id">
-                </div>
-
-                <div class="form-group">
                     <label for="email">Email</label>
                     <input id="email" value="{{ $user->email }}" class="form-control" type="email" name="email">
                 </div>
@@ -41,6 +36,29 @@
                     <label for="password">Password</label>
                     <input id="password" value="{{ $user->password }}" class="form-control" type="password" name="password">
                 </div>
+
+
+
+
+
+                {{--<div class="form-group">--}}
+                    {{--<label for="role_id">Role ID</label>--}}
+                    {{--<input id="role_id" value="{{ $user->roles->first()->id }}" class="form-control" type="number" name="role_id">--}}
+                {{--</div>--}}
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Role</label>
+                    </div>
+                    <select class="custom-select" id="role" name="role_id">
+                        <option selected>Choose Role</option>
+                        <option name="admin" value="1">Admin</option>
+                        <option name="boardmember" value="2">Board member</option>
+                        <option name="localcontact" value="3">Local contact</option>
+                        <option name="user" value="4">User</option>
+                    </select>
+                </div>
+
                 <button type="submit" class="btn btn-primary">Update user</button>
             </form>
 
