@@ -41,8 +41,9 @@
                         @endforeach
                     </select>
                 </div>
-                {{--Only admin access--}}
-                {{--@if(Auth::user()->role_id == 1)--}}
+
+                {{--Only admin access - nedanstående kommer ej att funka, man kan inte ha en form i en form--}}
+                {{--@if(Auth::user()->roles->whereIn('id', 1)->first())--}}
                 {{--<div class="form-group">--}}
                     {{--<form action="upload.php" method="post" enctype="multipart/form-data">--}}
                         {{--Select file to upload (for "Materials" category only):<br><br>--}}

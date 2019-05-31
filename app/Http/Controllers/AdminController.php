@@ -1,20 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use App\User;
 use App\Role;
-
 use App\Http\Requests\ValidateUser;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function indexAdmin()
@@ -25,19 +22,21 @@ class AdminController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function createUser()
     {
         $roles = Role::all();
-
-        return view('admin.createUser');
+        $user = Auth::user();
+        if($user->can('createUser', User::class)){
+            return view('admin.createUser', compact('roles'));
+        } else {
+            echo 'Not authorized';
+        }
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
+     * Store a newly created resource in storage
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -60,7 +59,6 @@ class AdminController extends Controller
 
     /**
      * Display the specified resource.
-     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -77,8 +75,18 @@ class AdminController extends Controller
      */
     public function editUser($id)
     {
+        // get current logged in user
+        $user = Auth::user();
+
         $user = User::find($id);
-        return view('admin.editUser', compact('user'));
+
+        if ($user->can('editUser', $user)) {
+            return view('admin.editUser', compact('user'));
+        } else {
+            echo 'Not Authorized.';
+        }
+
+//        return view('admin.editUser', compact('user'));
     }
 
     /**
@@ -88,22 +96,6 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
-
-
-
-//    public function updateUser(ValidateUser $request, $id)
-//    {
-////        dd($request);
-//        $user = User::find($id);
-//        $user->name = $request->name;
-//        $user->role_id = $request->role_id;
-//        $user->email = $request->email;
-//        $user->password = $request->password;
-//        $user->save();
-//
-//        return redirect('/admin')->with('status', 'User updated! ');
-//    }
 
     public function updateUser(ValidateUser $request, $id)
     {
@@ -137,10 +129,17 @@ class AdminController extends Controller
      */
     public function destroyUser($id)
     {
-        $user = User::find($id);
-        $user->delete();
+        $user = Auth::user();
 
-        return redirect('/admin')->with('status', 'User deleted! ');
+        $user = User::find($id);
+        if($user->can('destroyUser', $user)){
+            $user->delete();
+            return redirect('/admin')->with('status', 'User deleted! ');
+        } else {
+            echo "Not Authorized.";
+        }
+
+
 
 
     }

@@ -41,7 +41,8 @@
             {{--<li class="nav-item">--}}
                 {{--<a class="nav-link" href="{{ url('board') }}">Board</a>--}}
             {{--</li>--}}
-            @if (Auth::user()->roles->whereIn('id', [1,2])->first())
+            {{--@if (Auth::user()->roles->whereIn('id', [1,2])->first())--}}
+            @if (Auth::user()->roles->whereIn('id', 1)->first())
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('admin') }}">Admin</a>
                 </li>
