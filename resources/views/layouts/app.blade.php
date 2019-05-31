@@ -41,12 +41,11 @@
             {{--<li class="nav-item">--}}
                 {{--<a class="nav-link" href="{{ url('board') }}">Board</a>--}}
             {{--</li>--}}
-            @if (Auth::user()->role_id == 1)
+            @if (Auth::user()->roles->whereIn('id', [1,2])->first())
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('admin') }}">Admin</a>
                 </li>
             @endif
-
         </ul>
     </div>
 
@@ -87,9 +86,9 @@
 </nav>
     <div id="app" class="container p-2 mb-4">
         <main class="py-4 mb-4">
-            <div class="row">
 
-                @if(request()->route()->getName() == 'home' || request()->route()->getName() == 'posts.index' || request()->route()->getName() == 'posts.show')
+            <div class="row">
+                @if(request()->route()->getName() == 'home' || request()->route()->getName() == 'posts.index' || request()->route()->getName() == 'posts.show' || request()->route()->getName() == 'sortCategory' )
                     <div class="col-md-8">
                         @yield('content')
                     </div>
@@ -124,7 +123,8 @@
     </div>
         <footer class="footer mt-4 bg-dark text-white fixed-bottom">
             <div class="container p-4">
-                <small>&copy; 2019-<?php echo date("Y") ;?> Adminajsr | Need help? Contact <a class="text-warning" href="{{ url('contact') }}"> Support</a></small>
+                <!--<small>&copy; 2019-<?php echo date("Y") ;?> Adminajsr | Need help? Contact <a class="text-warning" href="{{ url('contact') }}"> Support</a></small>-->
+                <small>&copy; 2019-<?php echo date("Y") ;?> Adminajsr | Need help? Contact <a class="text-warning" href="mailto:support@adminajsr.com"> Support</a></small>
             </div>
         </footer>
 @endif

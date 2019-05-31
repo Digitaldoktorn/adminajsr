@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\Role;
 
 use App\Http\Requests\ValidateUser;
 use Illuminate\Support\Facades\Hash;
@@ -43,12 +44,19 @@ class AdminController extends Controller
     {
         $user = new User;
         $user->name = $request->name;
-        $user->role_id = $request->role_id;
+//        $user->role_id = $request->role_id;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+
+        $role = Role::find($request->role_id);
+        $array = [];
+        $array[] = $role;
+
+
         // put the currently logged in user into "$post->user_id"
 //        $post->user_id = auth()->user()->id;
         $user->save();
+        $user->roles()->attach($role);
         return redirect('/admin')->with('status', 'User has been created! ');
     }
 

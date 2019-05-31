@@ -3,7 +3,7 @@
 
     <h1>Updates
         {{--@if(Auth::user())--}}
-        @if(Auth::user()->role_id <= 3)
+        @if(Auth::user()->roles->first()->id <= 3)
             <a class="btn btn-primary btn-sm" title="Create New Post" href="{{ url('posts/create') }}">New post</a>
         @endif
     </h1>

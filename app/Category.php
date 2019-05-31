@@ -11,7 +11,7 @@ class Category extends Model
     // A many to many relationship
     public function posts()
     {
-        return $this->belongsToMany(Post::class);
+        return $this->belongsToMany('App\Post', 'category_post');
     }
 
     // to get categories by name in the url instead of id number

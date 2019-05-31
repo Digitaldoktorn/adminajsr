@@ -31,7 +31,7 @@ class PostPolicy
     public function create(User $user)
     {
         // admin, boardmember and local contact can create a post
-        return $user->role_id <= 3;
+        return $user->roles->first()->id <= 3;
     }
 
     /**

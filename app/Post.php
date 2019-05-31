@@ -23,8 +23,7 @@ class Post extends Model
     // A many to many relationship
     public function categories()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany('App\Category', 'category_post');
     }
-
 
 }

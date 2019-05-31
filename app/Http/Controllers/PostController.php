@@ -26,13 +26,6 @@ class PostController extends Controller
         return view('posts.index', compact('posts'));
     }
 
-//    public function indexCategories()
-//    {
-//        $categories = Category::orderBy('created_at', 'desc')->take(6)->get();
-//
-//        return view('home')->with('categories', $categories);
-//    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -60,14 +53,21 @@ class PostController extends Controller
      */
     public function store(ValidatePost $request)
     {
-//        dd($request);
+        // dd($request);
         $post = new Post;
         $post->title = $request->title;
         $post->content = $request->content;
-        $post->category_id = $request->category_id;
+
+        $category = Category::find($request->category_id);
+        $array = [];
+        $array[] = $category;
+
+
         // put the currently logged in user into "$post->user_id"
         $post->user_id = auth()->user()->id;
         $post->save();
+        $post->categories()->attach($category);
+
         return redirect('posts')->with('status', 'Post has been created! ');
     }
 
@@ -121,6 +121,14 @@ class PostController extends Controller
         $post = Post::find($id);
         $post->title = $request->title;
         $post->content = $request->content;
+
+        // Updating categories
+        if(isset($post->categories->first()->id))
+        {
+            $post->categories()->detach($post->categories->first()->id);
+        }
+
+        $post->categories()->attach($request->category_id);
         $post->save();
 
         return redirect('/posts')->with('status', 'Post updated! ');

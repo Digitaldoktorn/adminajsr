@@ -34,7 +34,7 @@
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Options</label>
                     </div>
-                    <select class="custom-select" id="category">
+                    <select class="custom-select" id="category" name="category_id">
                         <option selected>Choose Category</option>
                         <option name="Materials" value="1">Materials</option>
                         <option name="Local News" value="2">Local News</option>
