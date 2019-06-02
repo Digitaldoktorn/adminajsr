@@ -35,11 +35,6 @@
                     <input id="password" class="form-control" type="password" name="password">
                 </div>
 
-                {{--<div class="form-group">--}}
-                    {{--<label for="role_id">Role ID</label>--}}
-                    {{--<input id="role_id" class="form-control" type="number" min="1" max="4" name="role_id">--}}
-                {{--</div>--}}
-
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Role</label>

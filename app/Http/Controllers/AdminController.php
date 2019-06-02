@@ -28,11 +28,9 @@ class AdminController extends Controller
     {
         $roles = Role::all();
         $user = Auth::user();
-        if($user->can('createUser', User::class)){
-            return view('admin.createUser', compact('roles'));
-        } else {
-            echo 'Not authorized';
-        }
+
+        return view('admin.createUser', compact('roles'));
+
     }
 
     /**
@@ -80,11 +78,9 @@ class AdminController extends Controller
 
         $user = User::find($id);
 
-        if ($user->can('editUser', $user)) {
-            return view('admin.editUser', compact('user'));
-        } else {
-            echo 'Not Authorized.';
-        }
+
+        return view('admin.editUser', compact('user'));
+
 
 //        return view('admin.editUser', compact('user'));
     }
@@ -126,12 +122,9 @@ class AdminController extends Controller
         $user = Auth::user();
 
         $user = User::find($id);
-        if($user->can('destroyUser', $user)){
-            $user->delete();
-            return redirect('/admin')->with('status', 'User deleted! ');
-        } else {
-            echo "Not Authorized.";
-        }
+        $user->delete();
+        return redirect('/admin')->with('status', 'User deleted! ');
+
 
     }
 }

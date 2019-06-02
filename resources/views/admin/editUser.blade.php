@@ -3,7 +3,6 @@
 
     <h1>Edit user</h1>
 
-    {{--Kopierat från https://gist.github.com/trevorgreenleaf/b1508d5524d43a666757f9e9fd1e3903--}}
     @if (count($errors) > 0)
         <div class="alert alert-danger text-left">
             <strong>Whoops!</strong> There were problems with input:
@@ -36,15 +35,6 @@
                     <label for="password">Password</label>
                     <input id="password" value="{{ $user->password }}" class="form-control" type="password" name="password">
                 </div>
-
-
-
-
-
-                {{--<div class="form-group">--}}
-                    {{--<label for="role_id">Role ID</label>--}}
-                    {{--<input id="role_id" value="{{ $user->roles->first()->id }}" class="form-control" type="number" name="role_id">--}}
-                {{--</div>--}}
 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">

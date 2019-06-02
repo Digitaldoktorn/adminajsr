@@ -37,7 +37,7 @@ Route::get('service/post/create', 'PostController@create');
 Route::get('service/post/edit', 'PostController@edit');
 Route::get('service/post/destroy', 'PostController@destroy');
 
-Route::get('service/admin/create-user', 'AdminController@createUser');
-Route::get('service/admin/edit-user', 'AdminController@editUser');
-Route::get('service/admin/destroy-user', 'AdminController@destroyUser');
+//Route::get('service/admin/create-user', 'AdminController@createUser');
+//Route::get('service/admin/edit-user', 'AdminController@editUser');
+//Route::get('service/admin/destroy-user', 'AdminController@destroyUser');
 
