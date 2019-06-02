@@ -36,9 +36,9 @@
                     </div>
                     <select class="custom-select" id="category" name="category_id">
                         <option selected>Choose Category</option>
-                        <option name="Materials" value="1">Materials</option>
-                        <option name="Local News" value="2">Local News</option>
-                        <option name="Activities" value="3">Activities</option>
+                        @foreach ($categories as $category)
+                            <option id="category_id" value={{ $category->id }}>{{ $category->name }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>

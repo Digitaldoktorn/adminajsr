@@ -96,9 +96,11 @@ class PostController extends Controller
         // load post
         $post = Post::find($id);
 
+        $categories = Category::all();
+
 
         if ($user->can('edit', $post)) {
-            return view('posts.edit', compact('post'));
+            return view('posts.edit', compact('post', 'categories'));
         } else {
             echo 'Not Authorized.';
         }

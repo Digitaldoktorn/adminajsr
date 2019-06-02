@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
+use Gate;
 use App\Http\Requests\ValidateUser;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -16,6 +17,7 @@ class AdminController extends Controller
      */
     public function indexAdmin()
     {
+
         $users = User::all();
         return view('admin/indexAdmin', compact('users'));
     }
@@ -26,6 +28,9 @@ class AdminController extends Controller
      */
     public function createUser()
     {
+        if(!Gate::allows('isAdmin')){
+            abort(404, 'Sorry, you are not authorized');
+        }
         $roles = Role::all();
         $user = Auth::user();
 
@@ -73,6 +78,9 @@ class AdminController extends Controller
      */
     public function editUser($id)
     {
+        if(!Gate::allows('isAdmin')){
+            abort(404, 'Sorry, you are not authorized');
+        }
         // get current logged in user
         $user = Auth::user();
 
