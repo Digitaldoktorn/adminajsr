@@ -115,12 +115,6 @@ class AdminController extends Controller
         return redirect('/admin')->with('status', 'User updated! ');
     }
 
-
-
-
-
-
-
     /**
      * Remove the specified resource from storage.
      *
@@ -138,9 +132,6 @@ class AdminController extends Controller
         } else {
             echo "Not Authorized.";
         }
-
-
-
 
     }
 }

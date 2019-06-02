@@ -4,12 +4,13 @@
 
     <div class="jumbotron">
         {{--Greeting logged in user, see code in AppServiceProvider--}}
-        <h1 class="display-4">Welcome {{ $auth->name }}!</h1>
+        <h2 class="display-6">Welcome {{ $auth->name }}!</h2>
         <p class="lead">This is a web portal with internal information for our organisation's members. If you need any help, please send an email to support. Welcome to explore the site!</p>
         <hr class="my-4">
 
-        <p>An overview of the latest updates in the categories "Activities", "Local news" and "Materials" are presented below. Check out for more on the Updates page.</p>
-        <a class="btn btn-primary btn-lg" href="{{ url('posts') }}" role="button">Updates</a>
+        <p>An overview of the latest updates in the categories "Activities", "Local news" and "Materials" are presented below. Check out for more on the Updates page. </p>
+        <a class="btn btn-primary btn-sm" href="{{ url('posts') }}" role="button">Go to updates</a>
+
     </div>
 
     <div class="row">
