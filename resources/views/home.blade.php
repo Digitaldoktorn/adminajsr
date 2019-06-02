@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="jumbotron">
+    <div class="jumbotron" style="background-color: #FFF4B3;">
         {{--Greeting logged in user, see code in AppServiceProvider--}}
         <h2 class="display-6">Welcome {{ $auth->name }}!</h2>
         <p class="lead">This is a web portal with internal information for our organisation's members. If you need any help, please send an email to support. Welcome to explore the site!</p>

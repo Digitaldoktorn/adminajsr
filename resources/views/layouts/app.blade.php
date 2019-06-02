@@ -22,8 +22,8 @@
 </head>
 <body>
 @if(!Auth::guest())
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary text-white p-4">
-{{--<nav class="navbar navbar-expand-lg navbar-light p-4" style="background-color: #e3f2fd;">--}}
+<nav class="navbar navbar-expand-lg navbar-light p-4" style="background-color: #FFD700;">
+{{--<nav class="navbar navbar-expand-lg navbar-light p-4" style="background-color: #DAA520;">--}}
     <a class="navbar-brand" href="{{ url('home') }}">Human Rights Focus</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -67,7 +67,6 @@
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} <span class="caret"></span>
-
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -104,6 +103,14 @@
                                 <p>Local news from our local contact person are presented in this category. For example location address changes, time changes, local events etc.</p>
                                 <h3>Material</h3>
                                 <p>Flyers, videos, petitions, external resources etc. are presented in this category. Check regularly for updates!</p>
+                                <h3>Adminajsr - version history</h3>
+                                <ul>
+                                    <li>2019-06-02 Version 1.1 - style changes</li>
+                                    <li>2019-06-01 Version 1.0 - access control for user CRUD</li>
+                                    <li>2019-05-31 Version 0.9 - access control for post CRUD</li>
+                                    <li>2019-06-02 Version 1.1 - change category for posts now posible</li>
+
+                                </ul>
 
 
 
@@ -125,7 +132,7 @@
         <footer class="footer mt-4 bg-dark text-white fixed-bottom">
             <div class="container p-4">
                 <!--<small>&copy; 2019-<?php echo date("Y") ;?> Adminajsr | Need help? Contact <a class="text-warning" href="{{ url('contact') }}"> Support</a></small>-->
-                <small>&copy; 2019-<?php echo date("Y") ;?> Adminajsr | Need help? Contact <a class="text-warning" href="mailto:support@adminajsr.com"> Support</a></small>
+                <small>&copy; 2019-<?php echo date("Y") ;?> Adminajsr | Need help? Contact <a style="color: #FFD700;"  href="mailto:support@adminajsr.com"> Support</a></small>
             </div>
         </footer>
 @endif

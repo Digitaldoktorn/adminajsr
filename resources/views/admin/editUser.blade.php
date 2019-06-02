@@ -40,7 +40,7 @@
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Role</label>
                     </div>
-                    <select class="custom-select" id="role" name="role_id">
+                    <select class="custom-select form-control" id="role" name="role_id">
                         <option selected>Choose Role</option>
                         <option name="admin" value="1">Admin</option>
                         <option name="boardmember" value="2">Board member</option>
