@@ -23,19 +23,20 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input id="title" class="form-control" type="text" name="title" placeholder="Max 255 characters">
+                    <input id="title" class="form-control" type="text" name="title" placeholder="Max 100 characters">
                 </div>
 
                 <div class="form-group">
                     <label for="content">Content</label>
-                    <textarea id="content" class="form-control" rows="5" name="content" placeholder="Max 255 characters"></textarea>
+                    <textarea id="content" class="form-control" rows="5" name="content" placeholder="Max 300 characters"></textarea>
                 </div>
-                <div class="input-group mb-3">
+                <div class="input-group mb-3" name="category_id">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Options</label>
                     </div>
+
                     <select class="custom-select" id="category" type="text" name="category_id">
-                        <option selected>Choose Category</option>
+                        <option value="" disabled selected>Choose Category</option>
                         @foreach ($categories as $category)
                             <option id="category_id" value={{ $category->id }}>{{ $category->name }}</option>
                         @endforeach

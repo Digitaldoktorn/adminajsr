@@ -24,8 +24,9 @@ class ValidatePost extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|unique:posts,title,'.$this->post.'|max:200',
-            'content' => 'required',
+            'title' => 'required|unique:posts,title,'.$this->post.'|max:100',
+            'content' => 'required|max:300',
+            'category_id' => 'required',
         ];
     }
 }
