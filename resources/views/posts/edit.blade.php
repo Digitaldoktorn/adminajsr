@@ -35,7 +35,7 @@
                         <label class="input-group-text" for="inputGroupSelect01">Options</label>
                     </div>
                     <select class="custom-select" id="category" name="category_id">
-                        <option selected>Choose Category</option>
+                        <option value="" disabled selected>Choose Category</option>
                         @foreach ($categories as $category)
                             <option id="category_id" value={{ $category->id }}>{{ $category->name }}</option>
                         @endforeach
