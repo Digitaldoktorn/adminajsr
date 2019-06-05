@@ -22,17 +22,17 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input id="name" class="form-control" type="text" name="name">
+                    <input id="name" class="form-control" type="text" name="name" value="{{ old('name') }}">
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input id="email" class="form-control" type="email" name="email">
+                    <input id="email" class="form-control" type="email" name="email" value="{{ old('email') }}">
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input id="password" class="form-control" type="password" name="password">
+                    <input id="password" class="form-control" type="password" name="password" value="{{ ('password') }}">
                 </div>
 
                 <div class="input-group mb-3">
@@ -47,7 +47,7 @@
                         {{--<option name="user" id="role_id" value="4">User</option>--}}
                     {{--</select>--}}
                     <select class="custom-select" id="role" type="text" name="role_id">
-                        <option selected>Choose Role</option>
+                        <option value="" disabled selected>Choose Role</option>
                         @foreach ($roles as $role)
                             <option id="role_id" value={{ $role->id }}>{{ $role->name }}</option>
                         @endforeach

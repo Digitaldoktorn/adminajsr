@@ -49,7 +49,7 @@
                     {{--</select>--}}
 
                     <select class="custom-select" id="role" type="text" name="role_id">
-                        <option selected>Choose Role</option>
+                        <option value="" disabled selected>Choose Role</option>
                         @foreach ($roles as $role)
                             <option id="role_id" value={{ $role->id }}>{{ $role->name }}</option>
                         @endforeach
