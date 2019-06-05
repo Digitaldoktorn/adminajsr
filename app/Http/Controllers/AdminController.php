@@ -83,11 +83,12 @@ class AdminController extends Controller
         }
         // get current logged in user
         $user = Auth::user();
+        $roles = Role::all();
 
         $user = User::find($id);
 
 
-        return view('admin.editUser', compact('user'));
+        return view('admin.editUser', compact('user', 'roles'));
 
 
 //        return view('admin.editUser', compact('user'));

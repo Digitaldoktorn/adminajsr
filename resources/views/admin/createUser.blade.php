@@ -39,12 +39,18 @@
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Role</label>
                     </div>
-                    <select class="custom-select" id="role" name="role_id">
+                    {{--<select class="custom-select" id="role" name="role_id">--}}
+                        {{--<option selected>Choose Role</option>--}}
+                        {{--<option name="admin" id="role_id" value="1">Admin</option>--}}
+                        {{--<option name="boardmember" id="role_id" value="2">Board member</option>--}}
+                        {{--<option name="localcontact" id="role_id" value="3">Local contact</option>--}}
+                        {{--<option name="user" id="role_id" value="4">User</option>--}}
+                    {{--</select>--}}
+                    <select class="custom-select" id="role" type="text" name="role_id">
                         <option selected>Choose Role</option>
-                        <option name="admin" id="role_id" value="1">Admin</option>
-                        <option name="boardmember" id="role_id" value="2">Board member</option>
-                        <option name="localcontact" id="role_id" value="3">Local contact</option>
-                        <option name="user" id="role_id" value="4">User</option>
+                        @foreach ($roles as $role)
+                            <option id="role_id" value={{ $role->id }}>{{ $role->name }}</option>
+                        @endforeach
                     </select>
                 </div>
 
