@@ -27,7 +27,8 @@ class ValidateUser extends FormRequest
         return [
             'name' => 'required',
             'role_id' => 'required',
-            'email' => 'required|unique:users,email'.$this->user,
+            'email' => 'required|unique:users,email,'.$this->user.'|max:50',
+//            dd($this->user),
             'password' => 'required',
         ];
     }

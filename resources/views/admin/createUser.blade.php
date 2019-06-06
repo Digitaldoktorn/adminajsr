@@ -32,7 +32,7 @@
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input id="password" class="form-control" type="password" name="password" value="{{ ('password') }}">
+                    <input id="password" class="form-control" type="password" name="password" value="{{ old('password') }}">
                 </div>
 
                 <div class="input-group mb-3">

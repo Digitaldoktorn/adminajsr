@@ -31,16 +31,42 @@
                     <textarea id="content" class="form-control" rows="5" name="content" placeholder="Max 300 characters" value="{{ old('content') }}"></textarea>
                 </div>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Options</label>
-                    </div>
 
-                    <select class="custom-select" id="category" type="text" name="category_id">
-                        <option value="" disabled selected>Choose Category</option>
-                        @foreach ($categories as $category)
-                            <option id="category_id" value={{ $category->id }}>{{ $category->name }}</option>
-                        @endforeach
-                    </select>
+                    {{--Admin can choose any category--}}
+                    @if (Auth::user()->roles->whereIn('id', 1)->first())
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                        </div>
+                        <select class="custom-select" id="category" type="text" name="category_id">
+                            <option value="" disabled selected>Choose Category</option>
+                            @foreach ($categories as $category)
+                                <option id="category_id" value={{ $category->id }}>{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                    {{--Board members can only choose "Activities" category--}}
+                    @elseif (Auth::user()->roles->whereIn('id', 2)->first())
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                        </div>
+                        <select class="custom-select" id="category" type="text" name="category_id">
+                            <option value="" disabled selected>Choose Category</option>
+                            <option name="Local News" value="1">Activities</option>
+                        </select>
+
+                    {{--Local contacts can only choose "Local News" category--}}
+                    @elseif (Auth::user()->roles->whereIn('id', 3)->first())
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                        </div>
+                        <select class="custom-select" id="category" type="text" name="category_id">
+                            <option value="" disabled selected>Choose Category</option>
+                            <option name="Local News" value="2">Local News</option>
+                        </select>
+                    @else
+                        <p>Not authorized</p>
+                    @endif
+
+
                 </div>
 
                 {{--Only admin access - nedanstående kommer ej att funka, man kan inte ha en form i en form--}}
