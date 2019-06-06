@@ -3,7 +3,7 @@
 
     <h1>Create Post</h1>
 
-    {{--placera denna i controllern istället--}}
+    {{--This code should be in the controller - do later--}}
     @if (count($errors) > 0)
         <div class="alert alert-danger text-left">
             <strong>Whoops!</strong> There were problems with input:
@@ -23,13 +23,16 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input id="title" class="form-control" type="text" name="title" placeholder="Max 100 characters" value="{{ old('title') }}">
+                    <input id="title" class="form-control" type="text" name="title" placeholder="Max 100 characters"
+                           value="{{ old('title') }}">
                 </div>
 
                 <div class="form-group">
                     <label for="content">Content</label>
-                    <textarea id="content" class="form-control" rows="5" name="content" placeholder="Max 300 characters" value="{{ old('content') }}"></textarea>
+                    <textarea id="content" class="form-control" rows="5" name="content" placeholder="Max 300 characters"
+                              value="{{ old('content') }}"></textarea>
                 </div>
+
                 <div class="input-group mb-3">
 
                     {{--Admin can choose any category--}}
@@ -43,7 +46,8 @@
                                 <option id="category_id" value={{ $category->id }}>{{ $category->name }}</option>
                             @endforeach
                         </select>
-                    {{--Board members can only choose "Activities" category--}}
+
+                        {{--Board members can only choose "Activities" category--}}
                     @elseif (Auth::user()->roles->whereIn('id', 2)->first())
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Options</label>
@@ -53,7 +57,7 @@
                             <option name="Local News" value="1">Activities</option>
                         </select>
 
-                    {{--Local contacts can only choose "Local News" category--}}
+                        {{--Local contacts can only choose "Local News" category--}}
                     @elseif (Auth::user()->roles->whereIn('id', 3)->first())
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Options</label>
@@ -68,18 +72,18 @@
 
 
                 </div>
-
-                {{--Only admin access - nedanstående kommer ej att funka, man kan inte ha en form i en form--}}
+                <br><br>
+                {{--Only admin access - file upload - for later version--}}
                 {{--@if(Auth::user()->roles->whereIn('id', 1)->first())--}}
                 {{--<div class="form-group">--}}
-                    {{--<form action="upload.php" method="post" enctype="multipart/form-data">--}}
-                        {{--Select file to upload (for "Materials" category only):<br><br>--}}
-                        {{--<input type="file" name="fileToUpload" id="fileToUpload">--}}
-                        {{--<input type="submit" value="Upload file" name="submit">--}}
-                    {{--</form>--}}
+                {{--<form action="upload.php" method="post" enctype="multipart/form-data">--}}
+                {{--Select file to upload:<br><br>--}}
+                {{--<input type="file" name="fileToUpload" id="fileToUpload">--}}
+                {{--<input type="submit" value="Upload file" name="submit">--}}
+                {{--</form>--}}
                 {{--</div>--}}
+                {{--<br><br>--}}
                 {{--@endif--}}
-                {{--<br>--}}
 
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>

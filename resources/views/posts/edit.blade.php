@@ -28,7 +28,8 @@
 
                 <div class="form-group">
                     <label for="content">Content</label>
-                    <input id="content" value="{{ $post->content }}" class="form-control" type="textarea" name="content">
+                    <input id="content" value="{{ $post->content }}" class="form-control" type="textarea"
+                           name="content">
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">

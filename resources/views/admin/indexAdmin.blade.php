@@ -24,9 +24,7 @@
                     <td>{{ $user->role_id }}</td>
                     <td>{{ $user->email }}</td>
                     <td>
-                        {{--@if(Auth::user())--}}
-                            <a href="{{ url('admin/'.$user->id.'/edit-user') }}" class="btn btn-sm btn-primary">Edit</a>
-                        {{--@endif--}}
+                        <a href="{{ url('admin/'.$user->id.'/edit-user') }}" class="btn btn-sm btn-primary">Edit</a>
                     </td>
                 </tr>
             @endforeach

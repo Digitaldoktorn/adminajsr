@@ -34,7 +34,8 @@
             <td>Kings st 123</td>
             <td>Thursdays 7-8.30 pm</td>
             <td>grace@kelly.com</td>
-        </tr>        <tr>
+        </tr>
+        <tr>
             <th scope="row">Liverpool</th>
             <td>Steven Seagull</td>
             <td>Boring st 123</td>

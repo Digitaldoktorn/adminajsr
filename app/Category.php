@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
+
     // Any post may have many categories
     // Any category may be applied to many posts
     // A many to many relationship

@@ -1,35 +1,35 @@
 <?php
 
-namespace App\Http\Requests;
+    namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
+    use Illuminate\Foundation\Http\FormRequest;
 
-class ValidateUser extends FormRequest
-{
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
-        return true;
-    }
+    class ValidateUser extends FormRequest {
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
+        /**
+         * Determine if the user is authorized to make this request.
+         *
+         * @return bool
+         */
+        public function authorize()
+        {
+            return true;
+        }
 
-    public function rules()
-    {
-        return [
-            'name' => 'required',
-            'role_id' => 'required',
-            'email' => 'required|unique:users,email,'.$this->user.'|max:50',
+        /**
+         * Get the validation rules that apply to the request.
+         *
+         * @return array
+         */
+
+        public function rules()
+        {
+            return [
+                'name' => 'required',
+                'role_id' => 'required',
+                'email' => 'required|unique:users,email,' . $this->user . '|max:50',
 //            dd($this->user),
-            'password' => 'required',
-        ];
+                'password' => 'required',
+            ];
+        }
     }
-}

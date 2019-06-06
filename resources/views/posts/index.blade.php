@@ -10,25 +10,14 @@
     <h5>Sort by categories: </h5>
     <div class="btn-group" role="group" aria-label="Sort by category">
 
-            <button type="button" class="btn btn-light border border-primary"><a href="{{ url('posts') }}">All</a></button>
+        <button type="button" class="btn btn-light border border-primary"><a href="{{ url('posts') }}">All</a></button>
 
-            @foreach ($categories as $category)
-                <button type="button" class="btn btn-light border border-primary"><a href="/posts/categories/{{ $category }}"> {{ $category }}</a></button>
-
-            @endforeach
+        @foreach ($categories as $category)
+            <button type="button" class="btn btn-light border border-primary"><a
+                        href="/posts/categories/{{ $category }}"> {{ $category }}</a></button>
+        @endforeach
 
     </div>
-
-    {{--<ol class="list-unstyled">--}}
-        {{--@foreach ($categories as $category)--}}
-            {{--<li>--}}
-                {{--<a href="/posts/categories/{{ $category }}">--}}
-                    {{--{{ $category->name }}--}}
-                {{--</a>--}}
-            {{--</li>--}}
-        {{--@endforeach--}}
-    {{--</ol>--}}
-
 
     @if (session('status'))
         <div class="alert alert-success">
@@ -44,17 +33,17 @@
                         <div class="card-body">
                             <h5 class="card-title"><a href="{{ url('posts/'.$post->id) }}">{{ $post->title }}</a></h5>
 
-                            {{--https://carbon.nesbot.com/docs/#api-getters--}}
-                            <small class="text-black-50">Published {{ $post->created_at->toDateString() }} by {{ $post->user->name }} </small><br><br>
+                            <small class="text-black-50">Published {{ $post->created_at->toDateString() }}
+                                by {{ $post->user->name }} </small>
+                            <br><br>
                             <p class="card-text">{{ $post->content }}</p>
-                            {{--@if(Auth::user())--}}
                             @if(Auth::user()->id == $post->user_id)
                                 <a href="{{ url('posts/'.$post->id.'/edit') }}" class="btn btn-primary">Edit</a>
                             @endif
                         </div>
                     </div>
                 @endforeach
-                    <br>
+                <br>
                 {{ $posts->links() }}
             @else
                 <p>No posts found</p>
