@@ -60,9 +60,8 @@
             $post->content = $request->content;
 
             $category = Category::find($request->category_id);
-            $array = [];
-            $array[] = $category;
-
+//            $array = [];
+//            $array[] = $category;
 
             // put the currently logged in user into "$post->user_id"
             $post->user_id = auth()->user()->id;
@@ -124,7 +123,7 @@
             $post->title = $request->title;
             $post->content = $request->content;
 
-            // Updating categories
+            // Updating categories - first detaching current, then attaching the new
             if (isset($post->categories->first()->id))
             {
                 $post->categories()->detach($post->categories->first()->id);

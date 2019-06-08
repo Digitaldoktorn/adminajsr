@@ -16,6 +16,7 @@
          * Display a listing of the resource.
          * @return \Illuminate\Http\Response
          */
+//        shows all users in the database on the admin page
         public function indexAdmin()
         {
             $users = User::all();
@@ -27,13 +28,13 @@
          * Show the form for creating a new resource.
          * @return \Illuminate\Http\Response
          */
+//        Admin can create users
         public function createUser()
         {
             if (!Gate::allows('isAdmin')) {
                 abort(404, 'Sorry, you are not authorized');
             }
             $roles = Role::all();
-            $user = Auth::user();
 
             return view('admin.createUser', compact('roles'));
         }
@@ -43,6 +44,7 @@
          * @param  \Illuminate\Http\Request $request
          * @return \Illuminate\Http\Response
          */
+//        Storing user - with validation - see rules method in ValidateUser.php
         public function storeUser(ValidateUser $request)
         {
             $user = new User;
@@ -51,9 +53,8 @@
             $user->password = Hash::make($request->password);
 
             $role = Role::find($request->role_id);
-            $array = [];
-            $array[] = $role;
-
+//            $array = [];
+//            $array[] = $role;
             $user->save();
             $user->roles()->attach($role);
 
@@ -76,13 +77,12 @@
          * @param  int $id
          * @return \Illuminate\Http\Response
          */
+//        Admin can edit user
         public function editUser($id)
         {
             if (!Gate::allows('isAdmin')) {
                 abort(404, 'Sorry, you are not authorized');
             }
-            // get current logged in user
-            $user = Auth::user();
             $roles = Role::all();
             $user = User::find($id);
 
@@ -99,6 +99,7 @@
          * @return \Illuminate\Http\Response
          */
 
+//        Storing updated user
         public function updateUser(ValidateUser $request, $id)
         {
             $user = User::find($id);
@@ -106,7 +107,7 @@
             $user->email = $request->email;
             $user->password = $request->password;
 
-            // Updating roles
+            // Updating roles-first detach current role, then attach new role
             if (isset($user->roles->first()->id)) {
                 $user->roles()->detach($user->roles->first()->id);
             }
@@ -124,7 +125,6 @@
          */
         public function destroyUser($id)
         {
-            $user = Auth::user();
 
             $user = User::find($id);
             $user->delete();
