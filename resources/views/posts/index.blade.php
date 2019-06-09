@@ -2,6 +2,7 @@
 @section('content')
 
     <h1>Updates
+        {{--Admin, Boardmember and Localcontact can see this button--}}
         @if(Auth::user()->roles->first()->id <= 3)
             <a class="btn btn-primary btn-sm" title="Create New Post" href="{{ url('posts/create') }}">New post</a>
         @endif
@@ -37,6 +38,7 @@
                                 by {{ $post->user->name }} </small>
                             <br><br>
                             <p class="card-text">{{ $post->content }}</p>
+                            {{--Only the author of the post can see this button--}}
                             @if(Auth::user()->id == $post->user_id)
                                 <a href="{{ url('posts/'.$post->id.'/edit') }}" class="btn btn-primary">Edit</a>
                             @endif
@@ -44,6 +46,7 @@
                     </div>
                 @endforeach
                 <br>
+                {{--Displays pagination--}}
                 {{ $posts->links() }}
             @else
                 <p>No posts found</p>

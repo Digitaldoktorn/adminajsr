@@ -88,6 +88,7 @@
         <main class="py-4 mb-4">
 
             <div class="row">
+                {{--Showing sidebar on specific views--}}
                 @if(request()->route()->getName() == 'home' || request()->route()->getName() == 'posts.index' || request()->route()->getName() == 'posts.show' || request()->route()->getName() == 'sortCategory' )
                     <div class="col-md-8">
                         @yield('content')
@@ -120,6 +121,7 @@
                     </div>
                 @else
                     <div class="col-md-12">
+                        {{--Showing full width views--}}
                         @yield('content')
                     </div>
                 @endif

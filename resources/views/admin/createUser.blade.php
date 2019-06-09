@@ -22,6 +22,7 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="name">Name</label>
+                    {{--"old" means that the value is not lost in case of error--}}
                     <input id="name" class="form-control" type="text" name="name" value="{{ old('name') }}">
                 </div>
 
