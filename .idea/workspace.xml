@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfa525cc-bd0b-47bd-84bb-ff58ed60680e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,8 +36,8 @@
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor>
-                <caret column="4" selection-start-column="4" selection-end-column="4" />
+              <first_editor relative-caret-position="85">
+                <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
               </first_editor>
               <second_editor />
             </state>
@@ -444,12 +443,12 @@
       <workItem from="1560005422496" duration="3563000" />
       <workItem from="1560058809937" duration="1405000" />
       <workItem from="1560151014142" duration="69000" />
-      <workItem from="1560191983118" duration="250000" />
+      <workItem from="1560191983118" duration="524000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="311008000" />
+    <option name="totallyTimeSpent" value="311282000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -804,8 +803,8 @@
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="4" selection-start-column="4" selection-end-column="4" />
+          <first_editor relative-caret-position="85">
+            <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
           </first_editor>
           <second_editor />
         </state>
