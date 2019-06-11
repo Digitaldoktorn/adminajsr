@@ -75,16 +75,33 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
+                                {{--@if (Route::has('password.request'))--}}
+                                    {{--<a class="btn btn-link" href="{{ route('password.request') }}">--}}
+                                        {{--{{ __('Forgot Your Password?') }}--}}
+                                    {{--</a>--}}
+                                {{--@endif--}}
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
+            <div class="card-body text-muted">
+                <div class="form-group row">
+                    <small>
+                        <p><strong>Create user for demo purpose:</strong></p>
+                        <p>Create manually a user in the database so that you can log in. Use hashed password below in the database and any emailadress.<br>
+                        $2a$16$TH34e5JO883Krbdpsaffd.qbu.i1XlUkoNFAb1K1NzMAH8UK4wHqq<br>
+                            <br>The password in the login form is: 12345678<br> After you have logged in go to the admin page and create users with different roles there. </p>
+
+
+
+
+                    </small>
+                </div>
+            </div>
+
+
+
         </div>
     </div>
     <footer class="footer bg-dark text-white fixed-bottom mt-3">
