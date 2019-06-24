@@ -51,10 +51,15 @@
             $user->name = $request->name;
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
-
             $role = Role::find($request->role_id);
 //            $array = [];
 //            $array[] = $role;
+            $user->city = $request->city;
+            $user->address = $request->address;
+            $user->meeting_time = $request->meeting_time;
+            $user->phone = $request->phone;
+            $user->responsibility = $request->responsibility;
+
             $user->save();
             $user->roles()->attach($role);
 
