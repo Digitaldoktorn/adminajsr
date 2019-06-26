@@ -111,6 +111,11 @@
             $user->name = $request->name;
             $user->email = $request->email;
             $user->password = $request->password;
+            $user->city = $request->city;
+            $user->address = $request->address;
+            $user->meeting_time = $request->meeting_time;
+            $user->phone = $request->phone;
+            $user->responsibility = $request->responsibility;
 
             // Updating roles-first detach current role, then attach new role
             if (isset($user->roles->first()->id)) {

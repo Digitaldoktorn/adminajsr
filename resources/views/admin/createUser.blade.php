@@ -19,20 +19,20 @@
 
     <div class="row">
         <div class="col-12 col-md-12">
-
             <form class="form" action="{{ url('admin/create-user') }}" method="POST">
                 {{ csrf_field() }}
-
                 <div class="row">
-                    <div class="col" id="all_users">
+                    <div class="col">
                         <h5 class="p-3 mb-2 bg-secondary text-white">For all users:</h5>
                         <div class="form-group">
                             <label for="name">Name <super>*</super></label>
                             {{--"old" means that the value is not lost in case of error--}}
                             <input id="name" class="form-control" type="text" name="name" value="{{ old('name') }}">
                         </div>
-
-
+                        <div class="form-group">
+                            <label for="city">City <super>*</super></label>
+                            <input id="city" class="form-control" type="text" name="city" value="{{ old('city') }}">
+                        </div>
                         <div class="form-group">
                             <label for="email">Email <super>*</super></label>
                             <input id="email" class="form-control" type="email" name="email" value="{{ old('email') }}">
@@ -60,12 +60,9 @@
                     </div>
                     <div class="col">
                         <h5 class="p-3 mb-2 bg-secondary text-white">For local contacts only:</h5>
+
                         <div class="form-group">
-                            <label for="city">City</label>
-                            <input id="city" class="form-control" type="text" name="city" value="{{ old('city') }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Address</label>
+                            <label for="address">Office address</label>
                             <input id="address" class="form-control" type="text" name="address" value="{{ old('address') }}">
                         </div>
                         <div class="form-group">
@@ -86,9 +83,7 @@
                         <button type="submit" class="btn btn-primary">Add user</button>
                     </div>
                 </div>
-
             </form>
-
         </div>
     </div>
 

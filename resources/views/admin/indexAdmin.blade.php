@@ -26,6 +26,14 @@
                     <td>
                         <a href="{{ url('admin/'.$user->id.'/edit-user') }}" class="btn btn-sm btn-primary">Edit</a>
                     </td>
+                    <td>
+                        <form action="{{ url('admin/'.$user->id.'/delete-user') }}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+
+                            <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         @else
@@ -39,3 +47,4 @@
 
 
 @endsection
+
