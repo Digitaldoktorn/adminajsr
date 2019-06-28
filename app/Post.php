@@ -9,7 +9,7 @@
 
         protected $with = ['categories'];
 
-        protected $fillable = [
+        public $fillable = [
             'title', 'content', 'created_at', 'updated_at', 'user_id', 'category_id'
         ];
 
