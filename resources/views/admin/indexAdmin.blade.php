@@ -16,13 +16,25 @@
 
     <table class="table table-striped">
         <tbody>
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
         @if(count($users) > 0)
             @foreach ($users as $user)
                 <tr>
-                    <th scope="row">{{ $user->title }}</th>
+
+                    <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
-                    <td>{{ $user->role_id }}</td>
                     <td>{{ $user->email }}</td>
+                    <td>{{ $user->roles->first()->name }}</td>
+
                     <td>
                         <a href="{{ url('admin/'.$user->id.'/edit-user') }}" class="btn btn-sm btn-primary">Edit</a>
                     </td>
