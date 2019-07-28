@@ -62,6 +62,10 @@
                         <h5 class="p-3 mb-2 bg-secondary text-white">For local contacts only:</h5>
 
                         <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input id="phone" class="form-control" type="text" name="phone" value="{{ old('phone') }}">
+                        </div>
+                        <div class="form-group">
                             <label for="address">Office address</label>
                             <input id="address" class="form-control" type="text" name="address" value="{{ old('address') }}">
                         </div>
