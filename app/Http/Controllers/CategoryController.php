@@ -12,7 +12,7 @@
 
         public function index(Category $category)
         {
-            $posts = $category->posts()->paginate(5);
+            $posts = $category->posts()->latest()->paginate(5);
 
             return view('posts.index', compact('posts'));
         }
